@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Zyrvath"
+version = "1.0.0"
+id = "artifacts/zyrvath"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18257
+
+[services.development]
+run = "pnpm --filter @workspace/zyrvath run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/zyrvath", "run", "build" ]
+publicDir = "artifacts/zyrvath/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18257"
+BASE_PATH = "/"
