@@ -7,16 +7,16 @@ export default function Leaderboard() {
   return (
     <div className="flex flex-col gap-10 py-8 px-4 relative z-20">
       <div className="text-center mb-6">
-        <h1 className="text-4xl md:text-5xl font-black font-display mb-4 text-white flex items-center justify-center gap-4 uppercase tracking-widest drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]">
-          <Trophy className="w-10 h-10 text-primary drop-shadow-[0_0_10px_rgba(0,255,255,0.8)]" />
+        <h1 className="text-4xl md:text-5xl font-black font-display mb-4 text-white flex items-center justify-center gap-4 uppercase tracking-widest drop-shadow-[0_0_15px_rgba(255,120,0,0.4)]">
+          <Trophy className="w-10 h-10 text-primary drop-shadow-[0_0_10px_rgba(255,120,0,0.8)]" />
           TOP COMMANDERS
         </h1>
-        <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(0,255,255,0.8)] mb-6"></div>
+        <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(255,120,0,0.8)] mb-6"></div>
         <p className="text-lg text-muted-foreground max-w-xl mx-auto">The most lethal tacticians in the Orion Arm. Ranked by ELO rating.</p>
       </div>
 
-      <div className="bg-black/60 backdrop-blur-md border border-border border-l-4 border-l-primary rounded-none overflow-hidden shadow-[0_0_30px_rgba(0,255,255,0.05)] relative">
-        <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,255,0.1) 2px, rgba(0,255,255,0.1) 4px)' }}></div>
+      <div className="bg-black/60 backdrop-blur-md border border-border border-l-4 border-l-primary rounded-none overflow-hidden shadow-[0_0_30px_rgba(255,120,0,0.05)] relative">
+        <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,120,0,0.1) 2px, rgba(255,120,0,0.1) 4px)' }}></div>
         
         <div className="overflow-x-auto relative z-10">
           <table className="w-full text-left border-collapse">
@@ -52,7 +52,7 @@ export default function Leaderboard() {
                       {entry.militaryRank}
                     </div>
                   </td>
-                  <td className="px-6 py-5 font-mono text-primary font-bold text-lg drop-shadow-[0_0_5px_rgba(0,255,255,0.5)]">
+                  <td className="px-6 py-5 font-mono text-primary font-bold text-lg drop-shadow-[0_0_5px_rgba(255,120,0,0.5)]">
                     {entry.elo}
                   </td>
                   <td className="px-6 py-5">
@@ -60,7 +60,7 @@ export default function Leaderboard() {
                       <div className="flex justify-between items-center gap-3">
                         <div className="w-24 h-1.5 bg-background overflow-hidden border border-border/50">
                           <div 
-                            className="h-full bg-primary shadow-[0_0_5px_rgba(0,255,255,0.8)]" 
+                            className="h-full bg-primary shadow-[0_0_5px_rgba(255,120,0,0.8)]" 
                             style={{ width: `${entry.winRate}%` }} 
                           />
                         </div>
@@ -69,7 +69,7 @@ export default function Leaderboard() {
                     </div>
                   </td>
                   <td className="px-6 py-5 font-mono text-muted-foreground font-medium">
-                    <span className="text-primary drop-shadow-[0_0_2px_rgba(0,255,255,0.8)]">{entry.wins}</span> 
+                    <span className="text-primary drop-shadow-[0_0_2px_rgba(255,120,0,0.8)]">{entry.wins}</span> 
                     <span className="opacity-50 mx-1">/</span> 
                     <span className="text-red-500">{entry.losses}</span>
                   </td>
@@ -86,7 +86,7 @@ export default function Leaderboard() {
         
         <h2 className="text-3xl md:text-4xl font-black font-display mb-4 text-white uppercase tracking-widest">READY TO PROVE YOURSELF?</h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Enter the simulator and test your strategic mettle against AI combatants. Only the strongest survive the void.</p>
-        <Button asChild size="lg" data-testid="button-join-battle" className="h-14 px-12 text-lg font-black font-display uppercase tracking-widest bg-primary hover:bg-white text-primary-foreground hover:text-black transition-all shadow-[0_0_20px_rgba(0,255,255,0.4)] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,12px_100%,0_calc(100%-12px))] border-none">
+        <Button asChild size="lg" data-testid="button-join-battle" className="h-14 px-12 text-lg font-black font-display uppercase tracking-widest bg-primary hover:bg-white text-primary-foreground hover:text-black transition-all shadow-[0_0_20px_rgba(255,120,0,0.4)] [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,12px_100%,0_calc(100%-12px))] border-none">
           <Link href="/demo">JOIN THE BATTLE</Link>
         </Button>
       </div>

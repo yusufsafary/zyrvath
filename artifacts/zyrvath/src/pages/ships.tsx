@@ -10,8 +10,8 @@ export default function Ships() {
   return (
     <div className="flex flex-col gap-10 py-8 relative z-20">
       <div className="text-center mb-6">
-        <h1 className="text-4xl md:text-5xl font-black font-display mb-4 text-white uppercase tracking-widest drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]">IMPERIAL FLEET</h1>
-        <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(0,255,255,0.8)] mb-6"></div>
+        <h1 className="text-4xl md:text-5xl font-black font-display mb-4 text-white uppercase tracking-widest drop-shadow-[0_0_15px_rgba(255,120,0,0.4)]">IMPERIAL FLEET</h1>
+        <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(255,120,0,0.8)] mb-6"></div>
         <p className="text-lg text-muted-foreground max-w-xl mx-auto">Catalog of all known operational vessels in the sector.</p>
       </div>
 
@@ -19,7 +19,7 @@ export default function Ships() {
         <button 
           onClick={() => setSelectedTier("all")}
           data-testid="filter-tier-all"
-          className={`px-6 py-2 rounded-full text-sm font-bold font-display uppercase tracking-widest transition-all ${selectedTier === "all" ? "bg-primary text-background shadow-[0_0_15px_rgba(0,255,255,0.6)] border-transparent" : "bg-black/40 border border-primary/30 text-muted-foreground hover:border-primary hover:text-white"}`}
+          className={`px-6 py-2 rounded-full text-sm font-bold font-display uppercase tracking-widest transition-all ${selectedTier === "all" ? "bg-primary text-background shadow-[0_0_15px_rgba(255,120,0,0.6)] border-transparent" : "bg-black/40 border border-primary/30 text-muted-foreground hover:border-primary hover:text-white"}`}
         >
           ALL
         </button>
@@ -28,7 +28,7 @@ export default function Ships() {
             key={tier}
             onClick={() => setSelectedTier(tier)}
             data-testid={`filter-tier-${tier}`}
-            className={`px-6 py-2 rounded-full text-sm font-bold font-display uppercase tracking-widest transition-all ${selectedTier === tier ? "bg-primary text-background shadow-[0_0_15px_rgba(0,255,255,0.6)] border-transparent" : "bg-black/40 border border-primary/30 text-muted-foreground hover:border-primary hover:text-white"}`}
+            className={`px-6 py-2 rounded-full text-sm font-bold font-display uppercase tracking-widest transition-all ${selectedTier === tier ? "bg-primary text-background shadow-[0_0_15px_rgba(255,120,0,0.6)] border-transparent" : "bg-black/40 border border-primary/30 text-muted-foreground hover:border-primary hover:text-white"}`}
           >
             TIER {tier}
           </button>
@@ -48,7 +48,7 @@ export default function Ships() {
           const borderColor = tierColors[ship.tier as keyof typeof tierColors] || "#00ffff";
 
           return (
-            <div key={ship.id} className="bg-black/60 backdrop-blur-md border border-border border-l-4 p-6 hover:shadow-[0_0_20px_rgba(0,255,255,0.15)] hover:border-primary/50 transition-all group [clip-path:polygon(0_0,calc(100%-16px)_0,100%_16px,100%_100%,16px_100%,0_calc(100%-16px))] relative overflow-hidden" style={{ borderLeftColor: borderColor }}>
+            <div key={ship.id} className="bg-black/60 backdrop-blur-md border border-border border-l-4 p-6 hover:shadow-[0_0_20px_rgba(255,120,0,0.15)] hover:border-primary/50 transition-all group [clip-path:polygon(0_0,calc(100%-16px)_0,100%_16px,100%_100%,16px_100%,0_calc(100%-16px))] relative overflow-hidden" style={{ borderLeftColor: borderColor }}>
               <div className="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity" style={{ backgroundColor: borderColor }}></div>
               
               <div className="flex justify-between items-start mb-6 relative z-10">

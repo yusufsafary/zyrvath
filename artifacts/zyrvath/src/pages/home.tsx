@@ -61,7 +61,7 @@ export default function Home() {
               <motion.span
                 key={index}
                 className="text-4xl md:text-8xl font-black font-display tracking-[0.2em] text-white"
-                style={{ textShadow: '0 0 30px rgba(0,255,255,0.6), 0 0 60px rgba(0,255,255,0.3), 0 0 100px rgba(0,255,255,0.1)' }}
+                style={{ textShadow: '0 0 30px rgba(255,120,0,0.6), 0 0 60px rgba(255,120,0,0.3), 0 0 100px rgba(255,120,0,0.1)' }}
                 variants={{
                   hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
                   visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { type: "spring", damping: 12 } }
@@ -96,7 +96,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 3.5, duration: 0.5 }}
           >
-            <Button asChild size="lg" data-testid="button-enter-simulator" className="w-full sm:w-auto h-14 px-10 text-lg font-black font-display uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] relative overflow-hidden group [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,12px_100%,0_calc(100%-12px))] border-none">
+            <Button asChild size="lg" data-testid="button-enter-simulator" className="w-full sm:w-auto h-14 px-10 text-lg font-black font-display uppercase tracking-widest bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,120,0,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,120,0,0.6)] relative overflow-hidden group [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,12px_100%,0_calc(100%-12px))] border-none">
               <Link href="/demo">
                 <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/50 transition-all z-10 [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,12px_100%,0_calc(100%-12px))]"></div>
                 <div className="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-45deg] animate-[shimmer_2s_infinite]"></div>
@@ -104,7 +104,7 @@ export default function Home() {
               </Link>
             </Button>
             
-            <Button asChild size="lg" variant="outline" data-testid="button-view-fleet" className="w-full sm:w-auto h-14 px-10 text-lg font-bold font-display uppercase tracking-widest border-2 border-primary text-primary hover:bg-primary/10 transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(0,255,255,0.2)] bg-transparent [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,12px_100%,0_calc(100%-12px))]">
+            <Button asChild size="lg" variant="outline" data-testid="button-view-fleet" className="w-full sm:w-auto h-14 px-10 text-lg font-bold font-display uppercase tracking-widest border-2 border-primary text-primary hover:bg-primary/10 transition-all hover:scale-105 hover:shadow-[0_0_15px_rgba(255,120,0,0.2)] bg-transparent [clip-path:polygon(0_0,calc(100%-12px)_0,100%_12px,100%_100%,12px_100%,0_calc(100%-12px))]">
               <Link href="/ships">VIEW FLEET</Link>
             </Button>
           </motion.div>
@@ -123,19 +123,19 @@ export default function Home() {
       <section className="border-y border-border/50 bg-card/60 backdrop-blur-sm relative z-20">
         <div className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-border/50 text-center">
           <div className="flex flex-col p-4">
-            <span className="font-display font-black text-3xl text-primary drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]">18</span>
+            <span className="font-display font-black text-3xl text-primary drop-shadow-[0_0_10px_rgba(255,120,0,0.5)]">18</span>
             <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase mt-1">Warships</span>
           </div>
           <div className="flex flex-col p-4">
-            <span className="font-display font-black text-3xl text-primary drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]">6</span>
+            <span className="font-display font-black text-3xl text-primary drop-shadow-[0_0_10px_rgba(255,120,0,0.5)]">6</span>
             <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase mt-1">Tiers</span>
           </div>
           <div className="flex flex-col p-4">
-            <span className="font-display font-black text-3xl text-primary drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]">11</span>
+            <span className="font-display font-black text-3xl text-primary drop-shadow-[0_0_10px_rgba(255,120,0,0.5)]">11</span>
             <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase mt-1">Ranks</span>
           </div>
           <div className="flex flex-col p-4">
-            <span className="font-display font-black text-2xl text-primary drop-shadow-[0_0_10px_rgba(0,255,255,0.5)] flex items-center justify-center h-[36px]">LIVE</span>
+            <span className="font-display font-black text-2xl text-primary drop-shadow-[0_0_10px_rgba(255,120,0,0.5)] flex items-center justify-center h-[36px]">LIVE</span>
             <span className="text-xs font-bold tracking-widest text-muted-foreground uppercase mt-1">Combat</span>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function Home() {
       <section className="py-24 px-4 max-w-7xl mx-auto relative z-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black font-display mb-4 text-white uppercase tracking-wider">Weapons of the Void</h2>
-          <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(0,255,255,0.8)] mb-6"></div>
+          <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(255,120,0,0.8)] mb-6"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Master the triad of space combat. Positioning, timing, and raw firepower.</p>
         </div>
         
@@ -161,13 +161,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="bg-card/80 backdrop-blur-md border border-border border-t-primary border-t-2 p-8 flex flex-col items-center text-center hover:bg-card hover:shadow-[0_0_30px_rgba(0,255,255,0.1)] transition-all group relative overflow-hidden"
+              className="bg-card/80 backdrop-blur-md border border-border border-t-primary border-t-2 p-8 flex flex-col items-center text-center hover:bg-card hover:shadow-[0_0_30px_rgba(255,120,0,0.1)] transition-all group relative overflow-hidden"
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%)' }}
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-500"></div>
               
-              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6 [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)] border border-primary/30 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all duration-300">
-                <feat.icon className="w-8 h-8 text-primary drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]" />
+              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6 [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)] border border-primary/30 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(255,120,0,0.4)] transition-all duration-300">
+                <feat.icon className="w-8 h-8 text-primary drop-shadow-[0_0_8px_rgba(255,120,0,0.6)]" />
               </div>
               <h3 className="text-2xl font-bold font-display uppercase tracking-widest mb-4 text-white">{feat.title}</h3>
               <p className="text-muted-foreground text-lg">{feat.desc}</p>
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
         
         <div className="max-w-4xl mx-auto text-center px-6 relative z-10">
-          <h2 className="text-3xl font-black font-display mb-12 tracking-[0.3em] uppercase text-primary drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]">The Void Beckons</h2>
+          <h2 className="text-3xl font-black font-display mb-12 tracking-[0.3em] uppercase text-primary drop-shadow-[0_0_15px_rgba(255,120,0,0.4)]">The Void Beckons</h2>
           
           <div className="relative">
             <span className="absolute -top-12 -left-8 text-8xl font-display text-primary/20 leading-none">"</span>
@@ -194,7 +194,7 @@ export default function Home() {
             <span className="absolute -bottom-16 -right-8 text-8xl font-display text-primary/20 leading-none">"</span>
           </div>
 
-          <a href="#" className="inline-flex items-center gap-2 text-primary font-display font-bold tracking-widest uppercase hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]">
+          <a href="#" className="inline-flex items-center gap-2 text-primary font-display font-bold tracking-widest uppercase hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(255,120,0,0.8)]">
             Read Intel Report <ChevronRight className="w-4 h-4" />
           </a>
         </div>
@@ -205,7 +205,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
             <h2 className="text-4xl md:text-5xl font-black font-display mb-4 text-white uppercase tracking-wider">Select Your Vessel</h2>
-            <div className="h-1 w-24 bg-primary shadow-[0_0_10px_rgba(0,255,255,0.8)]"></div>
+            <div className="h-1 w-24 bg-primary shadow-[0_0_10px_rgba(255,120,0,0.8)]"></div>
           </div>
           <Link href="/ships" className="inline-flex items-center gap-2 text-primary font-display font-bold tracking-widest uppercase hover:text-white transition-colors">
             View All 18 Ships <ChevronRight className="w-4 h-4" />
@@ -266,12 +266,12 @@ export default function Home() {
       <section className="py-24 px-4 max-w-5xl mx-auto relative z-20 w-full mb-16">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black font-display mb-4 text-white uppercase tracking-wider">Top Commanders</h2>
-          <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(0,255,255,0.8)] mb-6"></div>
+          <div className="h-1 w-24 bg-primary mx-auto shadow-[0_0_10px_rgba(255,120,0,0.8)] mb-6"></div>
         </div>
 
         <div className="bg-card/80 backdrop-blur-md border border-border border-l-4 border-l-primary shadow-2xl relative overflow-hidden">
           {/* Scanline effect */}
-          <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,255,0.1) 2px, rgba(0,255,255,0.1) 4px)' }}></div>
+          <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,120,0,0.1) 2px, rgba(255,120,0,0.1) 4px)' }}></div>
           
           <div className="overflow-x-auto relative z-10">
             <table className="w-full text-left border-collapse">
@@ -292,7 +292,7 @@ export default function Home() {
                     <td className="p-6">
                       <span className="font-bold text-white text-lg tracking-wide">{cmd.name}</span>
                     </td>
-                    <td className="p-6 font-mono text-primary font-bold text-lg drop-shadow-[0_0_5px_rgba(0,255,255,0.5)]">
+                    <td className="p-6 font-mono text-primary font-bold text-lg drop-shadow-[0_0_5px_rgba(255,120,0,0.5)]">
                       {cmd.elo}
                     </td>
                     <td className="p-6">

@@ -118,7 +118,7 @@ export default function Demo() {
   if (!isBattling || !playerShip || !npcShip) {
     return (
       <div className="max-w-5xl mx-auto flex flex-col items-center relative z-20 py-8">
-        <h1 className="text-4xl md:text-5xl font-black font-display mb-12 text-center text-white uppercase tracking-widest drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]">Select Your Vessel</h1>
+        <h1 className="text-4xl md:text-5xl font-black font-display mb-12 text-center text-white uppercase tracking-widest drop-shadow-[0_0_15px_rgba(255,120,0,0.4)]">Select Your Vessel</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-4">
           {starterShips.map(ship => (
             <div key={ship.id} className="bg-black/60 backdrop-blur-md border border-border border-l-4 rounded-r-xl p-6 hover:border-primary/50 transition-all flex flex-col gap-5 relative overflow-hidden group" style={{ borderLeftColor: ship.tier === 1 ? '#10b981' : '#3b82f6' }}>
@@ -181,12 +181,12 @@ export default function Demo() {
         {/* Player Stats */}
         <div className="w-full md:w-5/12 flex flex-col gap-3 relative z-10">
           <div className="flex justify-between items-end">
-            <h3 className="text-2xl font-black font-display text-primary uppercase tracking-widest drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]">{playerShip.name}</h3>
+            <h3 className="text-2xl font-black font-display text-primary uppercase tracking-widest drop-shadow-[0_0_8px_rgba(255,120,0,0.6)]">{playerShip.name}</h3>
             <span className="text-xs font-bold font-mono text-muted-foreground">CMD: YOU</span>
           </div>
           <div className="h-4 bg-background/80 overflow-hidden border border-primary/20 relative shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
             <motion.div 
-              className={`h-full ${playerHpPercent > 50 ? 'bg-primary shadow-[0_0_10px_rgba(0,255,255,0.8)]' : playerHpPercent > 25 ? 'bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.8)]' : 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]'}`}
+              className={`h-full ${playerHpPercent > 50 ? 'bg-primary shadow-[0_0_10px_rgba(255,120,0,0.8)]' : playerHpPercent > 25 ? 'bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.8)]' : 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]'}`}
               initial={{ width: "100%" }}
               animate={{ width: `${playerHpPercent}%` }}
               transition={{ duration: 0.4, ease: "easeOut" }}
@@ -252,7 +252,7 @@ export default function Demo() {
       {/* Controls */}
       <div className="flex justify-center mt-4">
         {!battleOver ? (
-          <Button size="lg" onClick={nextRound} data-testid="button-next-round" className="w-full md:w-auto px-16 h-16 text-xl font-black font-display tracking-[0.2em] uppercase bg-primary hover:bg-white hover:text-black text-primary-foreground shadow-[0_0_20px_rgba(0,255,255,0.4)] transition-all [clip-path:polygon(0_0,calc(100%-16px)_0,100%_16px,100%_100%,16px_100%,0_calc(100%-16px))] border-none">
+          <Button size="lg" onClick={nextRound} data-testid="button-next-round" className="w-full md:w-auto px-16 h-16 text-xl font-black font-display tracking-[0.2em] uppercase bg-primary hover:bg-white hover:text-black text-primary-foreground shadow-[0_0_20px_rgba(255,120,0,0.4)] transition-all [clip-path:polygon(0_0,calc(100%-16px)_0,100%_16px,100%_100%,16px_100%,0_calc(100%-16px))] border-none">
             Engage
           </Button>
         ) : null}
@@ -269,11 +269,11 @@ export default function Demo() {
             <motion.div 
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
-              className={`max-w-lg w-full p-10 flex flex-col items-center text-center relative overflow-hidden bg-background border-2 ${winner === 'player' ? 'border-primary shadow-[0_0_50px_rgba(0,255,255,0.3)]' : 'border-red-600 shadow-[0_0_50px_rgba(220,38,38,0.3)]'} [clip-path:polygon(0_0,calc(100%-30px)_0,100%_30px,100%_100%,30px_100%,0_calc(100%-30px))]`}
+              className={`max-w-lg w-full p-10 flex flex-col items-center text-center relative overflow-hidden bg-background border-2 ${winner === 'player' ? 'border-primary shadow-[0_0_50px_rgba(255,120,0,0.3)]' : 'border-red-600 shadow-[0_0_50px_rgba(220,38,38,0.3)]'} [clip-path:polygon(0_0,calc(100%-30px)_0,100%_30px,100%_100%,30px_100%,0_calc(100%-30px))]`}
             >
               <div className={`absolute top-0 right-0 w-64 h-64 rounded-full blur-[80px] -z-10 ${winner === 'player' ? 'bg-primary/20' : 'bg-red-600/20'}`}></div>
               
-              <h2 className={`text-5xl md:text-6xl font-black font-display uppercase tracking-widest mb-2 ${winner === "player" ? "text-white drop-shadow-[0_0_15px_rgba(0,255,255,0.8)]" : "text-white drop-shadow-[0_0_15px_rgba(220,38,38,0.8)]"}`}>
+              <h2 className={`text-5xl md:text-6xl font-black font-display uppercase tracking-widest mb-2 ${winner === "player" ? "text-white drop-shadow-[0_0_15px_rgba(255,120,0,0.8)]" : "text-white drop-shadow-[0_0_15px_rgba(220,38,38,0.8)]"}`}>
                 {winner === "player" ? "VICTORY" : "DEFEAT"}
               </h2>
               
