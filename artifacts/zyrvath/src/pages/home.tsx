@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
 import { Rocket, Shield, Zap, ChevronDown, ChevronRight } from "lucide-react";
+import { ZyrvathLogo } from "@/components/zyrvath-logo";
 import { Button } from "@/components/ui/button";
 import { ships } from "@/lib/game-data";
 import { leaderboardData } from "@/lib/game-data";
@@ -89,7 +90,17 @@ export default function Home() {
 
         <div className="relative z-10 flex flex-col items-center text-center max-w-5xl px-6 w-full mt-16">
 
-          {/* Title */}
+          {/* Studio Emblem */}
+          <motion.div
+            className="flex justify-center mb-6"
+            initial={{ opacity: 0, scale: 0.3, rotate: -20 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1.0, ease: [0.34, 1.56, 0.64, 1] }}
+          >
+            <ZyrvathLogo size={96} className="drop-shadow-[0_0_32px_rgba(255,120,0,0.85)]" />
+          </motion.div>
+
+                    {/* Title */}
           <motion.div
             className="flex justify-center flex-wrap mb-5"
             variants={{ hidden: { opacity: 1 }, visible: { opacity: 1, transition: { staggerChildren: 0.07 } } }}
