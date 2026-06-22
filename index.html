@@ -1,25 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Zyrvath — Command the Void</title>
-    <meta name="description" content="Zyrvath is a space combat game studio. Command your warship, dominate the leaderboard, and conquer a dying galaxy." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Zyrvath — Command the Void" />
-    <meta property="og:description" content="Zyrvath is a space combat game studio. Command your warship, dominate the leaderboard, and conquer a dying galaxy." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Zyrvath — Command the Void" />
-    <meta name="twitter:description" content="Zyrvath is a space combat game studio. Command your warship, dominate the leaderboard, and conquer a dying galaxy." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-BvKBNIRw.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-bMPaaAFZ.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zyrvath Studio — Independent Game Studio</title>
+  <meta name="description" content="Zyrvath Studio builds competitive space combat games. One game. No compromises.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Zyrvath Studio">
+  <meta property="og:description" content="18 warships. One void. A ranked ladder with no ceiling.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zyrvath.com/">
+  <meta property="og:image" content="https://zyrvath.com/opengraph.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+  /* ── HERO ── */
+  .hero{
+    position:relative;min-height:calc(100svh - var(--nav-h));
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:4rem 1.5rem 5rem;overflow:hidden;text-align:center;
+  }
+  .hero-bg{
+    position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%,rgba(255,90,0,.13) 0%,transparent 70%),
+      radial-gradient(ellipse 50% 40% at 50% 110%,rgba(255,60,0,.07) 0%,transparent 70%),
+      radial-gradient(ellipse 100% 100% at 50% 50%,#050610 40%,#06080f 100%);
+  }
+  /* Star field */
+  .hero-bg::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      radial-gradient(1px 1px at 15% 25%,rgba(255,255,255,.5) 0%,transparent 100%),
+      radial-gradient(1px 1px at 82% 13%,rgba(255,255,255,.4) 0%,transparent 100%),
+      radial-gradient(1px 1px at 45% 67%,rgba(255,255,255,.3) 0%,transparent 100%),
+      radial-gradient(1px 1px at 68% 40%,rgba(255,255,255,.5) 0%,transparent 100%),
+      radial-gradient(1px 1px at 28% 83%,rgba(255,255,255,.35) 0%,transparent 100%),
+      radial-gradient(1px 1px at 91% 58%,rgba(255,200,100,.4) 0%,transparent 100%),
+      radial-gradient(1px 1px at 7%  50%,rgba(255,255,255,.3) 0%,transparent 100%),
+      radial-gradient(1.5px 1.5px at 55% 20%,rgba(255,180,80,.5) 0%,transparent 100%),
+      radial-gradient(1px 1px at 73% 78%,rgba(255,255,255,.3) 0%,transparent 100%),
+      radial-gradient(1px 1px at 36% 9%, rgba(255,255,255,.4) 0%,transparent 100%);
+  }
+  .hero-inner{position:relative;z-index:1;max-width:700px}
+  .hero-logo{
+    width:clamp(120px,28vw,190px);height:auto;margin:0 auto 2.5rem;
+    animation:float 4s ease-in-out infinite,pulse-glow 4s ease-in-out infinite;
+  }
+  .hero h1{
+    font-size:clamp(1.85rem,6vw,3.4rem);font-weight:900;
+    color:#fff;letter-spacing:.02em;line-height:1.08;margin-bottom:1.1rem;
+  }
+  .hero h1 span{
+    background:linear-gradient(135deg,#ff9c30 0%,#ffbe62 50%,#ff7000 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    background-size:200% auto;animation:shimmer 3s linear infinite;
+  }
+  .hero-sub{
+    font-size:clamp(1rem,2.5vw,1.18rem);color:var(--muted);
+    max-width:520px;margin:0 auto 2.5rem;font-weight:500;
+  }
+  .hero-stats{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;
+    margin-bottom:2.5rem;
+  }
+  .hero-scroll{
+    position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    color:var(--muted2);font-family:var(--font-display);font-size:.5rem;
+    letter-spacing:.2em;text-transform:uppercase;
+  }
+  .hero-scroll-line{
+    width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,120,0,.5),transparent);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:.4;height:32px}50%{opacity:1;height:44px}}
+
+  /* ── FEATURES ── */
+  .feature-icon{
+    width:36px;height:36px;margin-bottom:1rem;
+    color:var(--accent);opacity:.85;
+  }
+  .feature-title{font-size:.95rem;margin-bottom:.5rem}
+
+  /* ── LORE STRIP ── */
+  .lore{
+    padding:4rem 1.5rem;text-align:center;position:relative;overflow:hidden;
+    background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 50%,var(--bg) 100%);
+  }
+  .lore::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(255,80,0,.05) 0%,transparent 70%);
+  }
+  .lore-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+  .lore blockquote{
+    font-family:var(--font-display);font-size:clamp(.95rem,2.5vw,1.2rem);
+    font-weight:400;color:var(--muted);line-height:1.7;letter-spacing:.05em;
+    margin-bottom:1rem;
+  }
+  .lore blockquote em{color:var(--text);font-style:normal}
+  .lore cite{font-family:var(--font-display);font-size:.54rem;letter-spacing:.18em;color:var(--muted2);text-transform:uppercase}
+
+  /* ── CTA ── */
+  .cta-section{padding:5rem 1.5rem;text-align:center}
+  .cta-section h2{margin-bottom:.75rem}
+  .cta-section p{max-width:480px;margin:0 auto 2rem}
+
+  @media(min-width:640px){
+    .hero{padding:5rem 2.5rem 6rem}
+    .lore{padding:6rem 2.5rem}
+    .cta-section{padding:7rem 2.5rem}
+  }
+  </style>
+</head>
+<body data-page="home">
+<nav id="main-nav">
+  <a class="nav-logo" href="/">
+    <img src="/logo.png" alt="Zyrvath">
+    <span class="nav-wordmark">ZYRVATH</span>
+  </a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="/games.html">Games</a></li>
+    <li><a href="/about.html">Studio</a></li>
+    <li><a href="/how-to-play.html">How to Play</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="/play.html" style="color:var(--accent)">▶ Play Demo</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <img src="/logo.png" alt="Zyrvath" class="hero-logo">
+      <div class="kicker">Space Combat · Ranked · Active Development</div>
+      <h1>Command the void.<br><span>No mercy.</span></h1>
+      <p class="hero-sub">18 warships across 6 tiers. A competitive ranked ladder. One dead star system where every match decides your place in it.</p>
+      <div class="hero-stats">
+        <span class="stat"><strong>18</strong> Warships</span>
+        <span class="stat"><strong>6</strong> Tiers</span>
+        <span class="stat"><strong>11</strong> Ranks</span>
+        <span class="stat tag--dev" style="border-color:rgba(74,222,128,.25);color:#4ade80;background:rgba(34,197,94,.08);font-family:var(--font-display);font-size:.54rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .65rem;border-radius:2px;border:1px solid rgba(34,197,94,.25)">In Development</span>
+      </div>
+      <div class="btn-row" style="justify-content:center">
+        <a href="/play.html" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Play Demo
+        </a>
+        <a href="/games.html" class="btn btn-ghost">See the Ships</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container--wide">
+      <div class="section__header" style="text-align:center;margin-bottom:3rem">
+        <span class="kicker">Built Different</span>
+        <h2>No filler. No handholding. No padding.</h2>
+      </div>
+      <div class="card-grid card-grid--3">
+        <div class="card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3L2 19h20L12 3z"/><line x1="12" y1="11" x2="12" y2="15"/><circle cx="12" cy="17" r=".5" fill="currentColor"/>
+          </svg>
+          <h3 class="feature-title">Hull · Firepower · Shield</h3>
+          <p>Every ship lives and dies by four stats. HP, attack, shield defense, and evasion. Learn them or lose to someone who did.</p>
+        </div>
+        <div class="card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+          </svg>
+          <h3 class="feature-title">ELO Ranked Ladder</h3>
+          <p>Eleven ranks from Cadet to Grand Admiral. Your rating moves with every match outcome. There are no participation trophies.</p>
+        </div>
+        <div class="card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+          </svg>
+          <h3 class="feature-title">Six Tiers of Warships</h3>
+          <p>Scout-class corvettes to Sovereign-class dreadnoughts. No ship is objectively superior. Everything has a counter. Find it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lore">
+    <div class="lore-inner">
+      <span class="kicker kicker--muted">The Setting</span>
+      <blockquote>
+        "The Astral Empire held the galaxy for three millennia. Then <em>Zyrvath</em> was discovered — a dead star system with no strategic value and no known resources. Warlords arrived anyway. <em>No one has left.</em>"
+      </blockquote>
+      <cite>— Zyrvath Studio, Game Lore</cite>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center">
+      <span class="kicker">One Studio. One Game.</span>
+      <h2 style="margin-bottom:.75rem">We do not ship things we would not play.</h2>
+      <p style="max-width:480px;margin:0 auto 2.5rem">Zyrvath Studio is independent. We answer to the game. When it's ready, you'll know. Until then, the demo is open.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a href="/play.html" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Enter the Demo
+        </a>
+        <a href="/about.html" class="btn btn-ghost">About the Studio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="Zyrvath">
+        <span>Zyrvath Studio</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="/games.html">Games</a>
+        <a href="/about.html">Studio</a>
+        <a href="/how-to-play.html">How to Play</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/play.html">Demo</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024–2026 Zyrvath Studio · <a href="/privacy.html" style="color:var(--muted2)">Privacy</a> · <a href="/terms.html" style="color:var(--muted2)">Terms</a> · <a href="/cookies.html" style="color:var(--muted2)">Cookies</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var nav=document.getElementById('main-nav');
+  var btn=nav.querySelector('.nav-toggle');
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  var page=document.body.dataset.page;
+  nav.querySelectorAll('.nav-links a').forEach(function(a){
+    if(page==='home'&&a.getAttribute('href')==='/')a.classList.add('active');
+  });
+})();
+</script>
+</body>
 </html>
