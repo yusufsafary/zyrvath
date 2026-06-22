@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Zyrvath</title>
+  <meta name="description" content="Get in touch with Zyrvath. We welcome messages from players, press, and potential collaborators.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Contact | Zyrvath">
+  <meta property="og:description" content="Get in touch with Zyrvath. We welcome messages from players, press, and potential collaborators.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zyrvath.com">
+  <meta property="og:image" content="https://zyrvath.com/opengraph.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | Zyrvath">
+  <meta name="twitter:description" content="Get in touch with Zyrvath. We welcome messages from players, press, and potential collaborators.">
+  <meta name="twitter:image" content="https://zyrvath.com/opengraph.jpg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #07070f;
+    --surface: #0d0d1c;
+    --border: #1a1a2e;
+    --accent: #7c3aed;
+    --accent-light: #9f67ff;
+    --accent2: #3b82f6;
+    --text: #dde6f0;
+    --muted: #8892a4;
+    --white: #ffffff;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(7,7,15,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: 1.25rem; font-weight: 800; letter-spacing: 0.06em;
+    background: linear-gradient(135deg, #9f67ff, #3b82f6);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--white); text-decoration: none; }
+
+  /* MAIN */
+  main { flex: 1; max-width: 860px; margin: 0 auto; padding: 5rem 2rem 4rem; width: 100%; }
+
+  /* HERO BADGE */
+  .page-badge {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent-light);
+    background: rgba(124,58,237,0.12);
+    border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 100px; padding: 0.3rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; color: var(--white); margin-bottom: 1.25rem; }
+  h2 { font-size: 1.3rem; font-weight: 700; color: var(--white); margin: 2.5rem 0 0.75rem; }
+  h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+  p { color: var(--muted); margin-bottom: 1rem; }
+  .lead { font-size: 1.1rem; color: var(--text); max-width: 600px; }
+  ul, ol { color: var(--muted); padding-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.4rem; }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+  .footer-inner { max-width: 860px; margin: 0 auto; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
+  .footer-links a { color: var(--muted); font-size: 0.85rem; }
+  .footer-links a:hover { color: var(--white); text-decoration: none; }
+  .footer-copy { color: var(--muted); font-size: 0.8rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1.2rem; }
+    main { padding: 3rem 1.25rem 3rem; }
+  }
+</style>
+
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">ZYRVATH</a>
+  <ul class="nav-links">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-badge">Get in Touch</div>
+  <h1>Say hello.</h1>
+  <p class="lead">Whether you are a player with a question, a journalist working on a story, or someone who wants to collaborate, we read every message we receive.</p>
+  <hr class="divider">
+
+  <div class="card">
+    <h2>General Inquiries</h2>
+    <p>For anything that does not fit neatly into the categories below, reach us at <a href="mailto:hello@zyrvath.com">hello@zyrvath.com</a>. We aim to respond within a few business days.</p>
+  </div>
+
+  <div class="card">
+    <h2>Press and Media</h2>
+    <p>If you are writing about our games or covering the studio, we are happy to provide assets, quotes, and interviews. Send press inquiries to <a href="mailto:press@zyrvath.com">press@zyrvath.com</a> and include your publication and deadline.</p>
+  </div>
+
+  <div class="card">
+    <h2>Business and Partnerships</h2>
+    <p>For partnership proposals, licensing, or business development conversations, write to <a href="mailto:business@zyrvath.com">business@zyrvath.com</a>. Please include context about your proposal so we can give your message the attention it deserves.</p>
+  </div>
+
+  <div class="card">
+    <h2>Player Support</h2>
+    <p>Running into a bug or need help with one of our games? Send details about the issue including your platform and what happened to <a href="mailto:support@zyrvath.com">support@zyrvath.com</a>. The more context you include, the faster we can help.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/cookies.html">Cookie Policy</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Zyrvath. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
