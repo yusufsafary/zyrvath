@@ -1,43 +1,22 @@
-name: Deploy Zyrvath to GitHub Pages
+# DISABLED — deploy.yml previously overwrote the live zyrvath.com static site.
+# The live site at zyrvath.com is maintained separately on the gh-pages branch.
+# Do NOT re-enable automatic deployment without confirming what is on gh-pages.
+
+name: Deploy Zyrvath (DISABLED)
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-
-permissions:
-  contents: write
+    inputs:
+      confirm:
+        description: 'Type CONFIRM to deploy (WARNING: will overwrite gh-pages)'
+        required: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'CONFIRM'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build Zyrvath
-        run: pnpm --filter @workspace/zyrvath run build
-        env:
-          PORT: 3000
-          BASE_PATH: /
-          NODE_ENV: production
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./artifacts/zyrvath/dist/public
-          cname: zyrvath.com
+      - name: This workflow is disabled
+        run: echo "Deployment is manually disabled to protect zyrvath.com"
