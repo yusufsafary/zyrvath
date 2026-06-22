@@ -11,16 +11,109 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --bg: #07070f; --surface: #0d0d1c; --border: #1a1a2e; --accent-light: #9f67ff; --text: #dde6f0; --muted: #8892a4; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
-    a { color: var(--accent-light); text-decoration: none; }
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(7,7,15,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); padding: 0 1rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-size: 1rem; font-weight: 900; letter-spacing: 0.1em; background: linear-gradient(135deg, #9f67ff, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .nav-links { display: flex; gap: 1.25rem; list-style: none; }
-    .nav-links a { color: var(--muted); font-size: 0.8rem; font-weight: 500; padding: 0.5rem 0; }
-    .nav-links a:hover { color: #fff; text-decoration: none; }
+    
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #07070f; --surface: #0d0d1c; --border: #1a1a2e;
+    --accent: #7c3aed; --accent-light: #9f67ff; --accent2: #3b82f6;
+    --text: #dde6f0; --muted: #8892a4;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text);
+    line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden;
+  }
+  a { color: var(--accent-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  main { flex: 1; width: 100%; max-width: 800px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+  .badge {
+    display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent-light); background: rgba(124,58,237,0.12);
+    border: 1px solid rgba(124,58,237,0.3); border-radius: 100px; padding: 0.3rem 0.9rem; margin-bottom: 1.25rem;
+  }
+  h1 { font-size: 1.75rem; font-weight: 800; line-height: 1.2; color: #fff; margin-bottom: 1rem; }
+  h2 { font-size: 1.1rem; font-weight: 700; color: #fff; margin: 2rem 0 0.6rem; }
+  h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 1.25rem 0 0.4rem; }
+  p { color: var(--muted); margin-bottom: 0.9rem; }
+  p:last-child { margin-bottom: 0; }
+  .lead { font-size: 1rem; color: var(--text); margin-bottom: 1.25rem; }
+  ul, ol { color: var(--muted); padding-left: 1.35rem; margin-bottom: 0.9rem; }
+  li { margin-bottom: 0.35rem; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+  .updated { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 1.5rem 1rem; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 0.75rem; }
+  .footer-links a { color: var(--muted); font-size: 0.8rem; }
+  .footer-links a:hover { color: #fff; text-decoration: none; }
+  .footer-copy { color: var(--muted); font-size: 0.75rem; text-align: center; }
+  @media (min-width: 640px) {
+    main { padding: 3.5rem 2rem 4rem; }
+    h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+    h2 { font-size: 1.2rem; margin: 2.5rem 0 0.75rem; }
+    .card { padding: 1.75rem; margin-bottom: 1.25rem; }
+    footer { padding: 2rem; }
+    .footer-links { gap: 1.5rem; }
+    .footer-links a { font-size: 0.85rem; }
+  }
+  @media (min-width: 1024px) { .card { padding: 2rem; margin-bottom: 1.5rem; } }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(7,7,15,0.93);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1rem; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: 1rem; font-weight: 900; letter-spacing: 0.1em;
+    background: linear-gradient(135deg, #9f67ff, #3b82f6);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; text-decoration: none; flex-shrink: 0;
+  }
+  .nav-toggle {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -4px -8px 0;
+    z-index: 10;
+  }
+  .nav-toggle span {
+    display: block; width: 20px; height: 2px;
+    background: #dde6f0; border-radius: 2px;
+    transition: transform 0.22s ease, opacity 0.18s ease;
+    transform-origin: center;
+  }
+  nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links {
+    display: none;
+    position: absolute; top: 56px; left: 0; right: 0;
+    background: rgba(7,7,15,0.97); border-bottom: 1px solid var(--border);
+    flex-direction: column; gap: 0; list-style: none; padding: 0.5rem 0;
+  }
+  nav.open .nav-links { display: flex; }
+  .nav-links a {
+    display: block; color: var(--muted); font-size: 0.875rem; font-weight: 500;
+    padding: 0.8rem 1.25rem; transition: color 0.15s, background 0.15s;
+  }
+  .nav-links a:hover { color: #fff; background: rgba(124,58,237,0.08); text-decoration: none; }
+  .nav-links a.active { color: var(--accent-light); }
+  @media (min-width: 640px) {
+    nav { padding: 0 2rem; height: 64px; }
+    .nav-logo { font-size: 1.15rem; }
+    .nav-toggle { display: none; }
+    .nav-links {
+      display: flex !important; flex-direction: row; position: static;
+      background: none; border: none; padding: 0; gap: 0.25rem;
+    }
+    .nav-links a {
+      padding: 0.4rem 0.75rem; border-radius: 6px;
+      font-size: 0.85rem;
+    }
+    .nav-links a:hover { background: rgba(124,58,237,0.1); }
+  }
+
     main {
       flex: 1; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
@@ -29,38 +122,28 @@
     .error-num {
       font-size: 5rem; font-weight: 900; line-height: 1;
       background: linear-gradient(135deg, #9f67ff, #3b82f6);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       filter: drop-shadow(0 0 30px rgba(124,58,237,0.35));
       margin-bottom: 1rem;
     }
-    .badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-light); background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.3); border-radius: 100px; padding: 0.3rem 0.9rem; margin-bottom: 1.25rem; }
-    h1 { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; }
-    p { color: var(--muted); max-width: 380px; font-size: 0.95rem; margin-bottom: 2rem; }
-    .btn-home { display: inline-block; background: linear-gradient(135deg, #7c3aed, #3b82f6); color: #fff; font-weight: 700; font-size: 0.875rem; padding: 0.85rem 2rem; border-radius: 8px; letter-spacing: 0.02em; }
-    .btn-home:hover { opacity: 0.85; text-decoration: none; }
-    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 1.5rem 1rem; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 0.75rem; }
-    .footer-links a { color: var(--muted); font-size: 0.8rem; }
-    .footer-links a:hover { color: #fff; text-decoration: none; }
-    .footer-copy { color: var(--muted); font-size: 0.75rem; text-align: center; }
-    @media (min-width: 640px) {
-      nav { padding: 0 2rem; height: 64px; }
-      .nav-logo { font-size: 1.15rem; }
-      .nav-links { gap: 2rem; }
-      .nav-links a { font-size: 0.875rem; }
-      .error-num { font-size: 8rem; }
-      h1 { font-size: 1.75rem; }
-      footer { padding: 2rem; }
-      .footer-links { gap: 1.5rem; }
-      .footer-links a { font-size: 0.85rem; }
+    .btn-home {
+      display: inline-block; background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      color: #fff; font-weight: 700; font-size: 0.875rem;
+      padding: 0.85rem 2rem; border-radius: 8px; letter-spacing: 0.02em;
     }
+    .btn-home:hover { opacity: 0.85; text-decoration: none; }
+    @media (min-width: 640px) { .error-num { font-size: 8rem; } }
   </style>
 </head>
 <body>
-<nav>
+<nav id="site-nav">
   <a class="nav-logo" href="/">ZYRVATH</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
+    <li><a href="/games.html">Games</a></li>
+    <li><a href="/how-to-play.html">How to Play</a></li>
     <li><a href="/about.html">About</a></li>
     <li><a href="/contact.html">Contact</a></li>
   </ul>
@@ -68,8 +151,8 @@
 <main>
   <div class="error-num">404</div>
   <span class="badge">Lost in the void</span>
-  <h1>This page does not exist</h1>
-  <p>Looks like you wandered off the map. The page you are looking for has either moved or never existed in the first place.</p>
+  <h1 style="font-size:1.4rem;margin-bottom:0.75rem;">This page does not exist</h1>
+  <p style="max-width:360px;margin-bottom:2rem;">Looks like you wandered off the map. The page you are looking for has either moved or never existed in the first place.</p>
   <a class="btn-home" href="/">Return Home</a>
 </main>
 <footer>
@@ -82,5 +165,33 @@
   </div>
   <p class="footer-copy">&copy; 2025 Zyrvath. All rights reserved.</p>
 </footer>
+<script>
+function toggleNav(btn) {
+  const nav = btn.closest('nav');
+  const isOpen = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+  btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+}
+// Close nav on outside click
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('nav')) {
+    const nav = document.getElementById('site-nav');
+    if (nav) { nav.classList.remove('open'); const btn = nav.querySelector('.nav-toggle'); if (btn) btn.setAttribute('aria-expanded', false); }
+  }
+});
+// Close nav on link click (mobile)
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+  const nav = document.getElementById('site-nav');
+  if (nav) { nav.classList.remove('open'); const btn = nav.querySelector('.nav-toggle'); if (btn) btn.setAttribute('aria-expanded', false); }
+}));
+// Highlight active page
+(function() {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = a.getAttribute('href').replace('/', '');
+    if (href === path) a.classList.add('active');
+  });
+})();
+</script>
 </body>
 </html>
