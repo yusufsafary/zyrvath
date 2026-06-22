@@ -3,255 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Zyrvath Studio</title>
-  <meta name="description" content="Zyrvath is an independent game studio building atmospheric, uncompromising games.">
+  <title>Studio — Zyrvath</title>
+  <meta name="description" content="Zyrvath Studio is an independent game studio. One game. No publisher. No shortcuts.">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="About — Zyrvath Studio">
-  <meta property="og:description" content="Zyrvath is an independent game studio building atmospheric, uncompromising games.">
+  <meta property="og:title" content="Studio — Zyrvath">
+  <meta property="og:description" content="One game. No publisher. No shortcuts.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zyrvath.com/about.html">
-  <meta property="og:image" content="https://zyrvath.com/logo.png">
+  <meta property="og:image" content="https://zyrvath.com/opengraph.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
   <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg:      #050610;
-  --surface: #09101e;
-  --border:  #16213a;
-  --accent:  #ff7800;
-  --accent2: #f59e0b;
-  --glow:    rgba(255,120,0,0.75);
-  --glow2:   rgba(255,120,0,0.3);
-  --text:    #e8f1f5;
-  --muted:   #8fa3bb;
-}
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Rajdhani', sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.65; min-height: 100vh;
-  display: flex; flex-direction: column; overflow-x: hidden;
-}
-a { color: var(--accent); text-decoration: none; }
-a:hover { color: #ffad52; text-decoration: none; }
-
-/* ── NAV ── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(5,6,16,0.92);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 1.25rem; height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo {
-  display: flex; align-items: center; flex-shrink: 0;
-  text-decoration: none;
-}
-.nav-logo img {
-  height: 34px; width: auto;
-  filter: drop-shadow(0 0 8px var(--glow)) drop-shadow(0 0 20px var(--glow2));
-  transition: filter 0.2s;
-}
-.nav-logo:hover img {
-  filter: drop-shadow(0 0 12px var(--glow)) drop-shadow(0 0 30px rgba(255,120,0,0.5));
-}
-.nav-toggle {
-  display: flex; flex-direction: column; justify-content: center; gap: 5px;
-  background: none; border: none; cursor: pointer;
-  padding: 8px; margin: -8px -4px -8px 0;
-}
-.nav-toggle span {
-  display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px;
-  transition: transform 0.22s ease, opacity 0.18s ease; transform-origin: center;
-}
-nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-nav.open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav-links {
-  display: none; list-style: none;
-  position: absolute; top: 60px; left: 0; right: 0;
-  background: rgba(5,6,16,0.97); border-bottom: 1px solid var(--border);
-  flex-direction: column; padding: 0.4rem 0;
-}
-nav.open .nav-links { display: flex; }
-.nav-links a {
-  display: block; color: var(--muted);
-  font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 0.75rem 1.5rem; transition: color 0.15s, background 0.15s;
-}
-.nav-links a:hover { color: var(--accent); background: rgba(255,120,0,0.05); }
-.nav-links a.active { color: var(--accent); }
-@media (min-width: 640px) {
-  nav { padding: 0 2rem; height: 68px; }
-  .nav-logo img { height: 40px; }
-  .nav-toggle { display: none; }
-  .nav-links {
-    display: flex !important; flex-direction: row; position: static;
-    background: none; border: none; padding: 0; gap: 0;
+  .manifesto{padding:4rem 0;border-bottom:1px solid var(--border)}
+  .manifesto-line{
+    font-family:var(--font-display);font-size:clamp(1rem,3vw,1.4rem);
+    font-weight:700;color:var(--muted);letter-spacing:.04em;
+    padding:1.25rem 0;border-bottom:1px solid var(--border);
+    display:flex;align-items:baseline;gap:1rem;
+    transition:color .2s;
   }
-  .nav-links a { padding: 0.4rem 0.85rem; border-radius: 5px; font-size: 0.82rem; }
-  .nav-links a:hover { background: rgba(255,120,0,0.07); }
-}
-
-/* ── LAYOUT ── */
-main { flex: 1; width: 100%; max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 3.5rem; }
-
-/* ── TYPE ── */
-.badge {
-  display: inline-block; font-size: 0.58rem; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); background: rgba(255,120,0,0.09);
-  border: 1px solid rgba(255,120,0,0.28); border-radius: 2px;
-  padding: 0.28rem 0.8rem; margin-bottom: 1rem;
-  font-family: 'Orbitron', monospace;
-}
-h1 {
-  font-family: 'Orbitron', monospace; font-weight: 900;
-  font-size: 1.65rem; line-height: 1.15; color: #fff; margin-bottom: 1rem;
-}
-h2 {
-  font-family: 'Orbitron', monospace; font-weight: 700;
-  font-size: 0.95rem; letter-spacing: 0.07em; color: #fff;
-  margin: 2.25rem 0 0.6rem; text-transform: uppercase;
-}
-h3 {
-  font-family: 'Rajdhani', sans-serif; font-weight: 700;
-  font-size: 0.95rem; color: var(--text); margin: 1.1rem 0 0.35rem;
-}
-p { color: var(--muted); margin-bottom: 0.85rem; font-size: 1.05rem; }
-p:last-child { margin-bottom: 0; }
-.lead { font-size: 1.1rem; color: var(--text); margin-bottom: 1.25rem; }
-ul, ol { color: var(--muted); padding-left: 1.35rem; margin-bottom: 0.85rem; font-size: 1.05rem; }
-li { margin-bottom: 0.3rem; }
-hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
-.updated { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; font-family:'Orbitron',monospace; letter-spacing:0.05em; }
-
-/* ── CARD ── */
-.card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-left: 2px solid rgba(255,120,0,0.3);
-  border-radius: 4px; padding: 1.35rem; margin-bottom: 1rem;
-}
-.card h2 { margin-top: 0; }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--surface); border-top: 1px solid var(--border);
-  padding: 1.75rem 1.25rem 2rem;
-}
-.footer-inner { max-width: 820px; margin: 0 auto; }
-.footer-logo {
-  display: flex; justify-content: center; margin-bottom: 1.25rem;
-}
-.footer-logo img {
-  height: 36px; width: auto; opacity: 0.7;
-  filter: drop-shadow(0 0 6px var(--glow2));
-}
-.footer-links {
-  display: flex; flex-wrap: wrap; gap: 0.85rem;
-  justify-content: center; margin-bottom: 1rem;
-}
-.footer-links a {
-  color: var(--muted); font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.05em; text-transform: uppercase;
-}
-.footer-links a:hover { color: var(--accent); }
-.footer-copy { color: var(--muted); font-size: 0.72rem; text-align: center; letter-spacing: 0.04em; }
-.footer-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 1.25rem; }
-
-@media (min-width: 640px) {
-  main { padding: 4rem 2rem 5rem; }
-  h1 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
-  h2 { font-size: 1.05rem; }
-  .card { padding: 1.75rem; margin-bottom: 1.25rem; }
-  footer { padding: 2.25rem 2rem 2.5rem; }
-}
-@media (min-width: 1024px) { .card { padding: 2rem; margin-bottom: 1.5rem; } }
-</style>
+  .manifesto-line:last-child{border-bottom:none}
+  .manifesto-line:hover{color:var(--text)}
+  .manifesto-line em{font-style:normal;color:var(--accent)}
+  .manifesto-num{font-size:.6rem;color:var(--muted2);letter-spacing:.1em;flex-shrink:0;margin-top:.1rem}
+  .values{padding:4rem 0}
+  .value-card{padding:1.5rem 0;border-bottom:1px solid var(--border)}
+  .value-card:last-child{border-bottom:none}
+  .value-card h3{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+  @media(min-width:640px){
+    .manifesto,.values{padding:6rem 0}
+  }
+  </style>
 </head>
-<body>
-<nav id="site-nav">
-  <a class="nav-logo" href="/" aria-label="Zyrvath Home">
+<body data-page="about">
+<nav id="main-nav">
+  <a class="nav-logo" href="/">
     <img src="/logo.png" alt="Zyrvath">
+    <span class="nav-wordmark">ZYRVATH</span>
   </a>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
     <li><a href="/games.html">Games</a></li>
+    <li><a href="/about.html">Studio</a></li>
     <li><a href="/how-to-play.html">How to Play</a></li>
-    <li><a href="/about.html" class="active">About</a></li>
     <li><a href="/contact.html">Contact</a></li>
+    <li><a href="/play.html" style="color:var(--accent)">▶ Play Demo</a></li>
   </ul>
 </nav>
+
 <main>
-  <span class="badge">About the Studio</span>
-  <h1>We do not make games for everyone.</h1>
-  <p class="lead">We make games for the players who want to feel something they cannot quite name. That is a smaller audience. We are fine with that.</p>
-  <hr>
-  <div class="card">
-    <h2>Origin</h2>
-    <p>Zyrvath was built by people who spent years making games for other studios. We made things we were proud of, but we always went home thinking about the game we actually wanted to make. Eventually we stopped waiting for permission.</p>
+  <div class="page-hero">
+    <div class="page-hero__inner">
+      <span class="kicker">The Studio</span>
+      <h1>We build one game.</h1>
+      <p class="lead">Zyrvath Studio is an independent developer. We are not a team of fifty. We are not backed by a publisher. We are building the game we wanted to play and couldn't find.</p>
+    </div>
   </div>
-  <div class="card">
-    <h2>How We Operate</h2>
-    <p>Small, intentional, and slow on purpose. Every decision on the team is made by someone who also ships the work. No layers. No committees. When you play something from us, you are playing exactly what we intended.</p>
-  </div>
-  <div class="card">
-    <h2>What We Prioritize</h2>
-    <ul>
-      <li>Atmosphere over volume. Feeling over feature count.</li>
-      <li>Games that respect the player's intelligence.</li>
-      <li>Silence as a design tool, not a missing asset.</li>
-      <li>Shipping when it is ready, not when a deadline says so.</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2>Contact</h2>
-    <p>We welcome messages from players, press, and potential collaborators. The best way to reach us is through our <a href="/contact.html">contact page</a>.</p>
-  </div>
+
+  <section class="manifesto">
+    <div class="container">
+      <div class="manifesto-line"><span class="manifesto-num">01</span>We do not ship features. We ship <em>decisions</em>.</div>
+      <div class="manifesto-line"><span class="manifesto-num">02</span>Every mechanic earns its place or gets <em>cut</em>.</div>
+      <div class="manifesto-line"><span class="manifesto-num">03</span>The demo exists because the game already <em>works</em>.</div>
+      <div class="manifesto-line"><span class="manifesto-num">04</span>We answer to the game. Not to a roadmap. Not to <em>metrics</em>.</div>
+      <div class="manifesto-line"><span class="manifesto-num">05</span>When it is ready, it will be <em>obvious</em>.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="kicker">What We're Building</span>
+      <div class="section-rule"></div>
+      <div class="card-grid card-grid--2">
+        <div class="card">
+          <h3 class="feature-title">The Game</h3>
+          <p>Zyrvath is a competitive space combat game. 18 warships. Six tiers. An ELO-based ranked system. The game is built around ship selection, positioning, and reading your opponent before they read you.</p>
+          <p>It is not an MMO. It is not an idle game. It is not a battle royale. It is a focused competitive experience designed to be played for years, not hours.</p>
+          <a href="/games.html" class="btn btn-ghost" style="margin-top:.5rem">See the Ships →</a>
+        </div>
+        <div class="card">
+          <h3 class="feature-title">The Setting</h3>
+          <p>The Astral Empire. Three thousand years of galactic order. Then Zyrvath — a dead star system with no strategic value — was found. Warlords came. Conflict followed. No one agreed on why. No one left.</p>
+          <p>The setting is a backdrop, not a tutorial. The game does not hold your hand and neither does the lore.</p>
+          <a href="/how-to-play.html" class="btn btn-ghost" style="margin-top:.5rem">How to Play →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <span class="kicker">Principles</span>
+      <div class="section-rule"></div>
+      <div class="values">
+        <div class="value-card">
+          <h3>Independence means something</h3>
+          <p>We have no publisher and no investor deadline. That is a choice, not a circumstance. It means we can wait until the thing is actually good.</p>
+        </div>
+        <div class="value-card">
+          <h3>Respect the player's time</h3>
+          <p>No daily login bonuses. No artificial gates. No content designed to maximize session length. You play when you want, for as long as you want.</p>
+        </div>
+        <div class="value-card">
+          <h3>The demo is not a pitch</h3>
+          <p>The demo is the game in its current state. If it is rough in places, that is honest. Play it to evaluate it, not to be impressed by it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align:center">
+    <div class="container">
+      <span class="kicker">Est. 2024</span>
+      <h2>Questions? We read every message.</h2>
+      <p style="max-width:420px;margin:0 auto 2rem">No automated responses. No support ticket system. Just a real reply from the people building the game.</p>
+      <a href="/contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
 </main>
+
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <a href="/"><img src="/logo.png" alt="Zyrvath"></a>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="Zyrvath">
+        <span>Zyrvath Studio</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="/games.html">Games</a>
+        <a href="/about.html">Studio</a>
+        <a href="/how-to-play.html">How to Play</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/play.html">Demo</a>
+      </nav>
     </div>
-    <hr class="footer-divider">
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/games.html">Games</a>
-      <a href="/how-to-play.html">How to Play</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-      <a href="/cookies.html">Cookies</a>
+    <div class="footer-bottom">
+      <p>© 2024–2026 Zyrvath Studio · <a href="/privacy.html" style="color:var(--muted2)">Privacy</a> · <a href="/terms.html" style="color:var(--muted2)">Terms</a> · <a href="/cookies.html" style="color:var(--muted2)">Cookies</a></p>
     </div>
-    <p class="footer-copy">&copy; 2025 Zyrvath Studio. All rights reserved.</p>
   </div>
 </footer>
 <script>
-function toggleNav(btn) {
-  const nav = btn.closest('nav');
-  const open = nav.classList.toggle('open');
-  btn.setAttribute('aria-expanded', open);
-  btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('nav')) {
-    const nav = document.getElementById('site-nav');
-    if (nav) { nav.classList.remove('open'); const b=nav.querySelector('.nav-toggle'); if(b) b.setAttribute('aria-expanded',false); }
-  }
-});
-document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
-  const nav = document.getElementById('site-nav');
-  if (nav) nav.classList.remove('open');
-}));
+(function(){
+  var nav=document.getElementById('main-nav');
+  var btn=nav.querySelector('.nav-toggle');
+  btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open)});
+  nav.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')==='/about.html')a.classList.add('active')});
+})();
 </script>
 </body>
 </html>
