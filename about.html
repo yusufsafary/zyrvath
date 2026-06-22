@@ -9,115 +9,80 @@
   <meta property="og:title" content="About | Zyrvath">
   <meta property="og:description" content="Learn about Zyrvath, an independent game studio crafting worlds worth getting lost in.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://zyrvath.com">
+  <meta property="og:url" content="https://zyrvath.com/about.html">
   <meta property="og:image" content="https://zyrvath.com/opengraph.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About | Zyrvath">
   <meta name="twitter:description" content="Learn about Zyrvath, an independent game studio crafting worlds worth getting lost in.">
   <meta name="twitter:image" content="https://zyrvath.com/opengraph.jpg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #07070f;
-    --surface: #0d0d1c;
-    --border: #1a1a2e;
-    --accent: #7c3aed;
-    --accent-light: #9f67ff;
-    --accent2: #3b82f6;
-    --text: #dde6f0;
-    --muted: #8892a4;
-    --white: #ffffff;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  a { color: var(--accent-light); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(7,7,15,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-logo {
-    font-size: 1.25rem; font-weight: 800; letter-spacing: 0.06em;
-    background: linear-gradient(135deg, #9f67ff, #3b82f6);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
-  .nav-links a:hover { color: var(--white); text-decoration: none; }
-
-  /* MAIN */
-  main { flex: 1; max-width: 860px; margin: 0 auto; padding: 5rem 2rem 4rem; width: 100%; }
-
-  /* HERO BADGE */
-  .page-badge {
-    display: inline-block;
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent-light);
-    background: rgba(124,58,237,0.12);
-    border: 1px solid rgba(124,58,237,0.3);
-    border-radius: 100px; padding: 0.3rem 1rem;
-    margin-bottom: 1.5rem;
-  }
-  h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; color: var(--white); margin-bottom: 1.25rem; }
-  h2 { font-size: 1.3rem; font-weight: 700; color: var(--white); margin: 2.5rem 0 0.75rem; }
-  h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
-  p { color: var(--muted); margin-bottom: 1rem; }
-  .lead { font-size: 1.1rem; color: var(--text); max-width: 600px; }
-  ul, ol { color: var(--muted); padding-left: 1.5rem; margin-bottom: 1rem; }
-  li { margin-bottom: 0.4rem; }
-  .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-
-  /* CARD */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px; padding: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    text-align: center;
-  }
-  .footer-inner { max-width: 860px; margin: 0 auto; }
-  .footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; }
-  .footer-links a { color: var(--muted); font-size: 0.85rem; }
-  .footer-links a:hover { color: var(--white); text-decoration: none; }
-  .footer-copy { color: var(--muted); font-size: 0.8rem; }
-
-  /* RESPONSIVE */
-  @media (max-width: 600px) {
-    nav { padding: 0 1rem; }
-    .nav-links { gap: 1.2rem; }
-    main { padding: 3rem 1.25rem 3rem; }
-  }
-</style>
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07070f; --surface: #0d0d1c; --border: #1a1a2e;
+      --accent-light: #9f67ff; --text: #dde6f0; --muted: #8892a4;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text);
+      line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden;
+    }
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7,7,15,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border); padding: 0 1rem; height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 1rem; font-weight: 900; letter-spacing: 0.1em;
+      background: linear-gradient(135deg, #9f67ff, #3b82f6);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .nav-links { display: flex; gap: 1.25rem; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: 0.8rem; font-weight: 500; padding: 0.5rem 0; }
+    .nav-links a:hover { color: #fff; text-decoration: none; }
+    main { flex: 1; width: 100%; max-width: 800px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    .badge {
+      display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent-light); background: rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.3); border-radius: 100px; padding: 0.3rem 0.9rem; margin-bottom: 1.25rem;
+    }
+    h1 { font-size: 1.75rem; font-weight: 800; line-height: 1.2; color: #fff; margin-bottom: 1rem; }
+    h2 { font-size: 1.1rem; font-weight: 700; color: #fff; margin: 2rem 0 0.6rem; }
+    p { color: var(--muted); margin-bottom: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+    .lead { font-size: 1rem; color: var(--text); margin-bottom: 1.25rem; }
+    ul { color: var(--muted); padding-left: 1.35rem; margin-bottom: 0.9rem; }
+    li { margin-bottom: 0.35rem; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 1.5rem 1rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 0.75rem; }
+    .footer-links a { color: var(--muted); font-size: 0.8rem; }
+    .footer-links a:hover { color: #fff; text-decoration: none; }
+    .footer-copy { color: var(--muted); font-size: 0.75rem; text-align: center; }
+    @media (min-width: 640px) {
+      nav { padding: 0 2rem; height: 64px; }
+      .nav-logo { font-size: 1.15rem; }
+      .nav-links { gap: 2rem; }
+      .nav-links a { font-size: 0.875rem; }
+      main { padding: 3.5rem 2rem 4rem; }
+      h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+      h2 { font-size: 1.2rem; margin: 2.5rem 0 0.75rem; }
+      .card { padding: 1.75rem; margin-bottom: 1.25rem; }
+      footer { padding: 2rem; }
+      .footer-links { gap: 1.5rem; }
+      .footer-links a { font-size: 0.85rem; }
+    }
+    @media (min-width: 1024px) {
+      .card { padding: 2rem; margin-bottom: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
 <nav>
@@ -127,25 +92,21 @@
     <li><a href="/contact.html">Contact</a></li>
   </ul>
 </nav>
-
 <main>
-  <div class="page-badge">About the Studio</div>
+  <span class="badge">About the Studio</span>
   <h1>We build games people think about long after they put the controller down.</h1>
-  <p class="lead">Zyrvath is an independent game studio. We are a small team driven by a single conviction: games are the most powerful creative medium on the planet, and they deserve to be treated that way.</p>
-  <hr class="divider">
-
+  <p class="lead">Zyrvath is an independent game studio. We are a small team driven by one conviction: games are the most powerful creative medium on the planet, and they deserve to be treated that way.</p>
+  <hr>
   <div class="card">
     <h2>Who We Are</h2>
     <p>Zyrvath was founded by a group of developers and designers who had spent years working on games for other people. At some point, the conversation shifted. We started asking what we would make if nobody was telling us what to make. The answer became Zyrvath.</p>
     <p>We do not chase trends. We chase the feeling you get when a game surprises you in a way that feels completely inevitable in hindsight. That feeling is rare, and manufacturing it takes patience, craft, and a willingness to throw away work that is merely good.</p>
   </div>
-
   <div class="card">
     <h2>How We Work</h2>
     <p>Small by design. Every person on the team ships work that matters. We prefer depth over breadth, polish over volume, and a game that knows exactly what it is over one that tries to be everything at once.</p>
-    <p>We build slowly and we build deliberately. When we release something, it is because we believe in it, not because a calendar told us to.</p>
+    <p>We build slowly and deliberately. When we release something, it is because we believe in it, not because a calendar told us to.</p>
   </div>
-
   <div class="card">
     <h2>What We Believe</h2>
     <ul>
@@ -155,24 +116,20 @@
       <li>We would rather make one thing memorable than ten things forgettable.</li>
     </ul>
   </div>
-
   <div class="card">
     <h2>Get in Touch</h2>
     <p>We are always interested in hearing from players, press, and collaborators. If you want to reach us, the easiest way is through our <a href="/contact.html">contact page</a>.</p>
   </div>
 </main>
-
 <footer>
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
-      <a href="/cookies.html">Cookie Policy</a>
-    </div>
-    <p class="footer-copy">&copy; 2026 Zyrvath. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/cookies.html">Cookie Policy</a>
   </div>
+  <p class="footer-copy">&copy; 2025 Zyrvath. All rights reserved.</p>
 </footer>
 </body>
 </html>
