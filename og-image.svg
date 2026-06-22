@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#07070f"/>
+      <stop offset="100%" style="stop-color:#0d0d1c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9f67ff"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Ambient glow circles -->
+  <circle cx="200" cy="315" r="280" fill="#7c3aed" opacity="0.07" filter="url(#softglow)"/>
+  <circle cx="1000" cy="200" r="220" fill="#3b82f6" opacity="0.07" filter="url(#softglow)"/>
+  <!-- Border frame -->
+  <rect x="40" y="40" width="1120" height="550" rx="20" fill="none" stroke="url(#accent)" stroke-width="1.5" opacity="0.3"/>
+  <!-- Grid lines -->
+  <line x1="40" y1="315" x2="1160" y2="315" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="600" y1="40" x2="600" y2="590" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- Logo Z -->
+  <text x="600" y="280" font-family="Arial Black, sans-serif" font-weight="900" font-size="180"
+    text-anchor="middle" fill="url(#accent)" filter="url(#glow)" opacity="0.18">Z</text>
+  <!-- Studio name -->
+  <text x="600" y="310" font-family="Arial Black, sans-serif" font-weight="900" font-size="96"
+    text-anchor="middle" letter-spacing="16" fill="url(#accent)" filter="url(#glow)">ZYRVATH</text>
+  <!-- Tagline -->
+  <text x="600" y="375" font-family="Arial, sans-serif" font-weight="400" font-size="24"
+    text-anchor="middle" fill="#8892a4" letter-spacing="4">INDEPENDENT GAME STUDIO</text>
+  <!-- Bottom accent line -->
+  <line x1="460" y1="410" x2="740" y2="410" stroke="url(#accent)" stroke-width="2" opacity="0.6"/>
+  <!-- URL -->
+  <text x="600" y="455" font-family="Arial, sans-serif" font-weight="400" font-size="18"
+    text-anchor="middle" fill="#8892a4" opacity="0.6">zyrvath.com</text>
+</svg>
