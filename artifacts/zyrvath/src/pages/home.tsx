@@ -158,6 +158,20 @@ export default function Home() {
               <Link href="/ships">VIEW FLEET</Link>
             </Button>
           </motion.div>
+
+          <motion.a
+            href="https://twitter.com/intent/tweet?text=Check%20out%20ZYRVATH%20%E2%80%94%20command%20the%20void%20at%20zyrvath.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center gap-2 px-5 py-2.5 border border-white/20 text-white/60 hover:text-white hover:border-white/50 transition-all text-xs font-bold font-display tracking-widest uppercase group"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ delay: 4.0, duration: 0.6 }}
+          >
+            <svg className="w-3.5 h-3.5 group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] transition-all" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Share on X
+          </motion.a>
         </div>
 
         <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary/40"
