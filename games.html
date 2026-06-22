@@ -23,39 +23,50 @@
   .ph-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none}
   .ph-grid{
     position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.025;
-    background-image:linear-gradient(rgba(255,120,0,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,120,0,1) 1px,transparent 1px);
+    background-image:linear-gradient(rgba(255,120,0,1) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,120,0,1) 1px,transparent 1px);
     background-size:80px 80px;
   }
   .ph-reticle{position:absolute;width:28px;height:28px;z-index:2;pointer-events:none}
   .ph-reticle--tl{top:1.25rem;left:1.25rem;border-top:2px solid rgba(255,120,0,.4);border-left:2px solid rgba(255,120,0,.4)}
   .ph-reticle--tr{top:1.25rem;right:1.25rem;border-top:2px solid rgba(255,120,0,.4);border-right:2px solid rgba(255,120,0,.4)}
   .page-hero__inner{position:relative;z-index:3}
-  /* ── GAME PAGE ── */
+
+  /* ── GAME HEADER (mobile first) ── */
   .game-header{
-    display:flex;flex-direction:column;gap:2rem;
-    padding:3.5rem 0;border-bottom:1px solid var(--border);
+    display:flex;flex-direction:column;align-items:center;
+    gap:2rem;padding:2.5rem 0;
+    border-bottom:1px solid var(--border);
+    text-align:center;
   }
   .game-cover{
-    position:relative;max-width:200px;aspect-ratio:1/1;
+    width:140px;height:140px;flex-shrink:0;
     display:flex;align-items:center;justify-content:center;
-    background:radial-gradient(circle,rgba(255,100,0,.08) 0%,transparent 70%);
+    background:radial-gradient(circle,rgba(255,100,0,.1) 0%,transparent 70%);
     border:1px solid var(--border);
   }
-  .game-cover img{width:60%;opacity:.9;filter:drop-shadow(0 0 20px rgba(255,100,0,.5));position:relative;z-index:1}
-  .game-meta h1{margin-bottom:.75rem}
-  .game-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem}
-  .game-desc{font-size:1.08rem;color:var(--text);font-weight:500;margin-bottom:1rem}
-  .tier-section{padding:3.5rem 0}
+  .game-cover img{
+    width:65%;opacity:.9;
+    filter:drop-shadow(0 0 18px rgba(255,100,0,.55));
+  }
+  .game-meta{width:100%}
+  .game-meta h1{font-size:clamp(1.4rem,5vw,2.2rem);margin-bottom:.6rem}
+  .game-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1rem;justify-content:center}
+  .game-desc{font-size:1rem;color:var(--text);font-weight:500;margin-bottom:.85rem}
+
+  /* ── FLEET / TIER ROWS (mobile first) ── */
+  .tier-section{padding:2rem 0}
   .tier-row{
-    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;
-    padding:1rem 0;border-bottom:1px solid var(--border);
+    display:flex;align-items:flex-start;gap:.85rem;
+    padding:.9rem 0;border-bottom:1px solid var(--border);
   }
   .tier-row:last-child{border-bottom:none}
   .tier-badge{
-    font-family:var(--font-display);font-size:.56rem;font-weight:900;
-    letter-spacing:.1em;text-transform:uppercase;
-    width:56px;text-align:center;padding:.3rem .5rem;
-    border:1px solid;border-radius:2px;flex-shrink:0;
+    font-family:var(--font-display);font-size:.52rem;font-weight:900;
+    letter-spacing:.08em;text-transform:uppercase;
+    width:52px;min-width:52px;text-align:center;
+    padding:.3rem .4rem;border:1px solid;border-radius:2px;
+    flex-shrink:0;margin-top:.1rem;
   }
   .t1{color:#6ee7b7;border-color:rgba(110,231,183,.3);background:rgba(110,231,183,.06)}
   .t2{color:#67e8f9;border-color:rgba(103,232,249,.3);background:rgba(103,232,249,.06)}
@@ -63,26 +74,47 @@
   .t4{color:#f59e0b;border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.06)}
   .t5{color:#fb923c;border-color:rgba(251,146,60,.3);background:rgba(251,146,60,.06)}
   .t6{color:#f87171;border-color:rgba(248,113,113,.3);background:rgba(248,113,113,.06)}
-  .tier-info h3{font-size:.85rem;margin-bottom:.2rem}
-  .tier-info p{font-size:.88rem;color:var(--muted);margin:0}
-  .tier-stat{font-family:var(--font-display);font-size:.58rem;color:var(--muted2);text-align:right;letter-spacing:.04em;white-space:nowrap}
-  .rank-grid{display:grid;gap:.75rem}
+  .tier-info{flex:1;min-width:0}
+  .tier-info h3{font-size:.82rem;margin-bottom:.2rem;letter-spacing:.04em}
+  .tier-info p{font-size:.85rem;color:var(--muted);margin:0;line-height:1.5}
+  /* hide stat labels on mobile — too cramped */
+  .tier-stat{display:none}
+
+  /* ── RANK GRID (mobile first) ── */
+  .rank-grid{display:grid;gap:.6rem}
   .rank-row{
-    display:flex;align-items:center;gap:1rem;
-    padding:.75rem 1rem;border:1px solid var(--border);background:var(--surface2);
+    display:flex;align-items:center;gap:.75rem;
+    padding:.65rem .85rem;border:1px solid var(--border);background:var(--surface2);
   }
   .rank-num{
-    font-family:var(--font-display);font-size:.56rem;font-weight:900;
-    letter-spacing:.1em;color:var(--muted2);width:1.5rem;flex-shrink:0;text-align:right;
+    font-family:var(--font-display);font-size:.52rem;font-weight:900;
+    letter-spacing:.08em;color:var(--muted2);width:1.25rem;flex-shrink:0;text-align:right;
   }
-  .rank-name{font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--text)}
-  .rank-bar{flex:1;height:2px;background:var(--border)}
+  .rank-name{font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.07em;color:var(--text);white-space:nowrap}
+  .rank-bar{flex:1;height:2px;background:var(--border);min-width:0}
   .rank-bar-fill{height:100%;background:var(--accent);opacity:.7}
+
+  /* ── DESKTOP OVERRIDES (640px+) ── */
   @media(min-width:640px){
-    .game-header{flex-direction:row;align-items:flex-start;gap:3rem;padding:5rem 0}
-    .game-cover{max-width:260px;aspect-ratio:1/1}
-    .tier-section{padding:5rem 0}
+    .game-header{
+      flex-direction:row;align-items:flex-start;
+      text-align:left;gap:3rem;padding:4rem 0;
+    }
+    .game-cover{width:220px;height:220px}
+    .game-tags{justify-content:flex-start}
+    .tier-section{padding:4rem 0}
+    .tier-row{align-items:center;gap:1.25rem}
+    .tier-badge{width:60px;min-width:60px;font-size:.56rem}
+    .tier-info h3{font-size:.88rem}
+    .tier-info p{font-size:.9rem}
+    .tier-stat{
+      display:block;
+      font-family:var(--font-display);font-size:.58rem;
+      color:var(--muted2);text-align:right;letter-spacing:.04em;white-space:nowrap;
+      flex-shrink:0;
+    }
     .rank-grid{grid-template-columns:repeat(2,1fr)}
+    .rank-row{padding:.75rem 1rem}
   }
   </style>
 </head>
@@ -117,6 +149,7 @@
     </div>
   </div>
 
+  <!-- Game overview -->
   <section class="section">
     <div class="container">
       <div class="game-header">
@@ -126,21 +159,21 @@
         <div class="game-meta">
           <div class="game-tags">
             <span class="tag tag--dev">Active Development</span>
-            <span class="tag" style="border:1px solid var(--border2);color:var(--muted2);background:transparent;font-family:var(--font-display);font-size:.54rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .65rem;border-radius:2px">Space Combat</span>
-            <span class="tag" style="border:1px solid var(--border2);color:var(--muted2);background:transparent;font-family:var(--font-display);font-size:.54rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .65rem;border-radius:2px">Ranked PvP</span>
-            <span class="tag" style="border:1px solid var(--border2);color:var(--muted2);background:transparent;font-family:var(--font-display);font-size:.54rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .65rem;border-radius:2px">PC · Browser</span>
+            <span class="tag" style="border:1px solid var(--border2);color:var(--muted2);background:transparent;font-family:var(--font-display);font-size:.54rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .6rem;border-radius:2px">Space Combat</span>
+            <span class="tag" style="border:1px solid var(--border2);color:var(--muted2);background:transparent;font-family:var(--font-display);font-size:.54rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .6rem;border-radius:2px">Ranked PvP</span>
+            <span class="tag" style="border:1px solid var(--border2);color:var(--muted2);background:transparent;font-family:var(--font-display);font-size:.54rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;padding:.22rem .6rem;border-radius:2px">PC · Browser</span>
           </div>
           <h1>Zyrvath</h1>
           <p class="game-desc">A competitive ranked game built around warship selection, positioning, and reading your opponent. Not a casual experience. Not designed for everyone.</p>
           <p>You pick a warship from one of six tiers. Your ship has four stats: hull integrity (HP), attack power, shield defense, and evasion. So does your opponent's. The match resolves around those eight numbers and the decisions you make with them.</p>
           <p>There is a ranked ladder with eleven ranks and an ELO system. Your rating reflects your match outcomes. No shortcuts. No paid boosts.</p>
-          <div class="stat-row">
-            <span class="stat"><strong>18</strong> Warships</span>
-            <span class="stat"><strong>6</strong> Tiers</span>
-            <span class="stat"><strong>11</strong> Ranks</span>
-            <span class="stat"><strong>4</strong> Stats</span>
+          <div class="stat-row" style="margin-bottom:1.25rem">
+            <span class="stat"><strong>18</strong>&nbsp;Warships</span>
+            <span class="stat"><strong>6</strong>&nbsp;Tiers</span>
+            <span class="stat"><strong>11</strong>&nbsp;Ranks</span>
+            <span class="stat"><strong>4</strong>&nbsp;Stats</span>
           </div>
-          <div class="btn-row" style="margin-top:1rem">
+          <div class="btn-row">
             <a href="/play.html" class="btn btn-primary">
               <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
               Play Demo Now
@@ -152,53 +185,73 @@
     </div>
   </section>
 
+  <!-- Fleet / Tiers -->
   <section class="section section--alt">
     <div class="container">
       <span class="kicker">The Fleet</span>
       <div class="section-rule"></div>
-      <h2 style="margin-bottom:.5rem">Six tiers. Eighteen warships.</h2>
-      <p style="margin-bottom:2.5rem">Each tier represents a distinct combat philosophy. Higher tier means more raw power and hull — and less forgiveness for bad positioning.</p>
+      <h2 style="margin-bottom:.4rem">Six tiers. Eighteen warships.</h2>
+      <p style="margin-bottom:2rem">Each tier is a distinct combat philosophy. Higher tier means more raw power — and less forgiveness.</p>
       <div class="tier-section" style="padding:0">
         <div class="tier-row">
-          <span class="tier-badge t1">Tier 1</span>
-          <div class="tier-info"><h3>Scout Class</h3><p>Built for speed and evasion. Lowest HP in the fleet. High dodge chance. Hit and run or die trying.</p></div>
+          <span class="tier-badge t1">T-1</span>
+          <div class="tier-info">
+            <h3>Scout Class</h3>
+            <p>Built for speed and evasion. Lowest HP in the fleet. Hit and run or die trying.</p>
+          </div>
           <div class="tier-stat">High Evasion<br>Low HP</div>
         </div>
         <div class="tier-row">
-          <span class="tier-badge t2">Tier 2</span>
-          <div class="tier-info"><h3>Interceptor Class</h3><p>A step up in firepower and hull. Evasion starts to trade off against staying power.</p></div>
+          <span class="tier-badge t2">T-2</span>
+          <div class="tier-info">
+            <h3>Interceptor Class</h3>
+            <p>A step up in firepower and hull. Evasion starts to trade off against staying power.</p>
+          </div>
           <div class="tier-stat">Balanced<br>Mobile</div>
         </div>
         <div class="tier-row">
-          <span class="tier-badge t3">Tier 3</span>
-          <div class="tier-info"><h3>Cruiser Class</h3><p>Mid-tier workhorse. Solid stats across the board. No obvious weakness, no dominant strength.</p></div>
+          <span class="tier-badge t3">T-3</span>
+          <div class="tier-info">
+            <h3>Cruiser Class</h3>
+            <p>Mid-tier workhorse. Solid stats across the board. No obvious weakness, no dominant strength.</p>
+          </div>
           <div class="tier-stat">Versatile<br>Reliable</div>
         </div>
         <div class="tier-row">
-          <span class="tier-badge t4">Tier 4</span>
-          <div class="tier-info"><h3>Destroyer Class</h3><p>Heavy damage output. Reduced evasion. You commit to the fight — there is no disengaging at this tier.</p></div>
+          <span class="tier-badge t4">T-4</span>
+          <div class="tier-info">
+            <h3>Destroyer Class</h3>
+            <p>Heavy damage output. Reduced evasion. You commit to the fight — no disengaging at this tier.</p>
+          </div>
           <div class="tier-stat">High Attack<br>Low Dodge</div>
         </div>
         <div class="tier-row">
-          <span class="tier-badge t5">Tier 5</span>
-          <div class="tier-info"><h3>Battlecruiser Class</h3><p>Near-dreadnought durability with firepower to match. Positioning becomes critical. Mistakes are expensive.</p></div>
+          <span class="tier-badge t5">T-5</span>
+          <div class="tier-info">
+            <h3>Battlecruiser Class</h3>
+            <p>Near-dreadnought durability with firepower to match. Mistakes are expensive.</p>
+          </div>
           <div class="tier-stat">High HP<br>Strong Shield</div>
         </div>
         <div class="tier-row">
-          <span class="tier-badge t6">Tier 6</span>
-          <div class="tier-info"><h3>Sovereign Class</h3><p>Maximum hull. Maximum firepower. Near-zero evasion. A dreadnought does not dodge. It absorbs and destroys.</p></div>
-          <div class="tier-stat">Maximum Power<br>Zero Agility</div>
+          <span class="tier-badge t6">T-6</span>
+          <div class="tier-info">
+            <h3>Sovereign Class</h3>
+            <p>Maximum hull. Maximum firepower. Near-zero evasion. It absorbs and destroys.</p>
+          </div>
+          <div class="tier-stat">Max Power<br>Zero Agility</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Ranked -->
   <section class="section">
     <div class="container">
       <span class="kicker">Ranked System</span>
       <div class="section-rule"></div>
-      <h2 style="margin-bottom:.5rem">Eleven ranks. One ELO.</h2>
-      <p style="margin-bottom:2.5rem">Your rating is calculated from match outcomes. Win to climb. Lose to fall. Every rank has a name. Not every player reaches the top.</p>
+      <h2 style="margin-bottom:.4rem">Eleven ranks. One ELO.</h2>
+      <p style="margin-bottom:2rem">Win to climb. Lose to fall. Every rank has a name. Not every player reaches the top.</p>
       <div class="rank-grid">
         <div class="rank-row"><span class="rank-num">I</span><span class="rank-name">Cadet</span><div class="rank-bar"><div class="rank-bar-fill" style="width:9%"></div></div></div>
         <div class="rank-row"><span class="rank-num">II</span><span class="rank-name">Ensign</span><div class="rank-bar"><div class="rank-bar-fill" style="width:18%"></div></div></div>
@@ -210,9 +263,13 @@
         <div class="rank-row"><span class="rank-num">VIII</span><span class="rank-name">Vice Admiral</span><div class="rank-bar"><div class="rank-bar-fill" style="width:73%"></div></div></div>
         <div class="rank-row"><span class="rank-num">IX</span><span class="rank-name">Admiral</span><div class="rank-bar"><div class="rank-bar-fill" style="width:82%"></div></div></div>
         <div class="rank-row"><span class="rank-num">X</span><span class="rank-name">Fleet Admiral</span><div class="rank-bar"><div class="rank-bar-fill" style="width:91%"></div></div></div>
-        <div class="rank-row" style="border-color:rgba(255,120,0,.3);background:rgba(255,120,0,.04)"><span class="rank-num" style="color:var(--accent)">XI</span><span class="rank-name" style="color:var(--accent)">Grand Admiral</span><div class="rank-bar"><div class="rank-bar-fill" style="width:100%;opacity:1"></div></div></div>
+        <div class="rank-row" style="border-color:rgba(255,120,0,.3);background:rgba(255,120,0,.04)">
+          <span class="rank-num" style="color:var(--accent)">XI</span>
+          <span class="rank-name" style="color:var(--accent)">Grand Admiral</span>
+          <div class="rank-bar"><div class="rank-bar-fill" style="width:100%;opacity:1"></div></div>
+        </div>
       </div>
-      <div style="margin-top:2.5rem;text-align:center">
+      <div style="margin-top:2rem;text-align:center">
         <a href="/play.html" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
           Start Your Climb
@@ -242,6 +299,7 @@
     </div>
   </div>
 </footer>
+
 <script>
 (function(){
   var nav=document.getElementById('main-nav');
