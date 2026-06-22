@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
            <div className="h-full bg-white/50 w-1/3 animate-[pulse_2s_ease-in-out_infinite] blur-sm"></div>
         </div>
         <div className="flex items-center gap-2">
-          <ZyrvathLogo size={32} className="drop-shadow-[0_0_10px_rgba(255,120,0,0.9)]" />
+          <ZyrvathLogo size={38} className="drop-shadow-[0_0_14px_rgba(255,120,0,0.95)]" />
           <span className="text-2xl font-black tracking-widest text-white font-display drop-shadow-[0_0_8px_rgba(255,120,0,0.8)]">ZYRVATH</span>
         </div>
         <div className="flex items-center gap-8 h-full">
