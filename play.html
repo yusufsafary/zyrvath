@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>Play Demo | Zyrvath</title>
+  <meta name="description" content="Play the Zyrvath game demo.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/index-C0OD_kvZ.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07070f; --surface: #0d0d1c; --border: #1a1a2e;
+      --accent: #7c3aed; --accent-light: #9f67ff;
+      --text: #dde6f0; --muted: #8892a4;
+    }
+    html, body { height: 100%; background: var(--bg); font-family: 'Inter', sans-serif; }
+    /* Slim back bar above the app */
+    #demo-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      height: 40px; background: rgba(7,7,15,0.96);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1rem; gap: 1rem;
+    }
+    #demo-bar a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--muted); font-size: 0.78rem; font-weight: 500;
+      text-decoration: none; transition: color 0.15s;
+    }
+    #demo-bar a:hover { color: #fff; }
+    #demo-bar a svg { width: 14px; height: 14px; }
+    #demo-bar .demo-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent-light);
+      background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.3);
+      border-radius: 100px; padding: 0.15rem 0.7rem;
+    }
+    /* Push root down so bar doesn't overlap */
+    #root { padding-top: 40px; min-height: 100vh; }
+    /* Loading screen while React boots */
+    #demo-loading {
+      position: fixed; inset: 40px 0 0 0; z-index: 100;
+      background: var(--bg); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+    }
+    .spin {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 3px solid var(--border); border-top-color: var(--accent-light);
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #demo-loading p { color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+<!-- Slim nav bar — back to site -->
+<div id="demo-bar">
+  <a href="/games.html">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    Back to site
+  </a>
+  <span class="demo-label">Game Demo</span>
+  <span style="font-size:0.72rem;color:var(--muted);">ZYRVATH</span>
+</div>
+
+<!-- Loading indicator (hidden once React mounts) -->
+<div id="demo-loading">
+  <div class="spin"></div>
+  <p>Loading demo...</p>
+</div>
+
+<div id="root"></div>
+
+<script>
+  // React Router has base: "/" — make the URL look like root so it matches routes
+  if (window.location.pathname !== '/') {
+    window.history.replaceState({ demoOrigin: window.location.pathname }, '', '/');
+  }
+
+  // Hide loading screen once root has content
+  const observer = new MutationObserver(function() {
+    const root = document.getElementById('root');
+    if (root && root.children.length > 0) {
+      const loading = document.getElementById('demo-loading');
+      if (loading) loading.style.display = 'none';
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.getElementById('root'), { childList: true });
+
+  // Fallback: hide loading after 8s regardless
+  setTimeout(() => {
+    const loading = document.getElementById('demo-loading');
+    if (loading) loading.style.display = 'none';
+  }, 8000);
+</script>
+
+<script type="module" crossorigin src="/assets/index-DwIO24jd.js"></script>
+
+</body>
+</html>
