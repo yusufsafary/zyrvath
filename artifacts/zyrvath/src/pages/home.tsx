@@ -437,13 +437,32 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="relative z-20 text-center text-sm font-display tracking-widest uppercase text-muted-foreground border-t border-border bg-background py-8">
-        <div className="flex items-center justify-center gap-4 mb-2">
+      <footer className="relative z-20 text-center text-sm font-display tracking-widest uppercase text-muted-foreground border-t border-border bg-background py-10">
+        <div className="flex items-center justify-center gap-4 mb-4">
           <div className="h-px w-16 bg-border" />
           <span>&copy; {new Date().getFullYear()} ZYRVATH</span>
           <div className="h-px w-16 bg-border" />
         </div>
-        <p className="text-primary/50 text-xs">All systems nominal. The void awaits.</p>
+
+        <div className="flex items-center justify-center gap-3 mb-6">
+          <a href="https://x.com/playzyrvath" target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors group">
+            <svg className="w-4 h-4 group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] transition-all" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            <span className="text-xs tracking-widest font-bold">@PLAYZYRVATH</span>
+          </a>
+        </div>
+
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-[10px] tracking-[0.2em] text-muted-foreground/50 lowercase">built with</span>
+          <a href="https://easya.io" target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <img src="/easya-logo.png" alt="EasyA Kickstart" className="h-8 w-auto object-contain" />
+          </a>
+        </div>
+
+        <p className="text-primary/50 text-xs mt-6">All systems nominal. The void awaits.</p>
       </footer>
     </div>
   );
