@@ -3,310 +3,421 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zyrvath | Indie Game Studio</title>
-  <meta name="description" content="Zyrvath is an independent game studio crafting worlds worth getting lost in.">
+  <title>Zyrvath Studio</title>
+  <meta name="description" content="Zyrvath is an independent game studio. We build atmospheric, uncompromising games for players who want more than entertainment.">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Zyrvath | Indie Game Studio">
-  <meta property="og:description" content="Zyrvath is an independent game studio crafting worlds worth getting lost in.">
+  <meta property="og:title" content="Zyrvath Studio">
+  <meta property="og:description" content="We build atmospheric, uncompromising games.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zyrvath.com">
-  <meta property="og:image" content="https://zyrvath.com/opengraph.jpg">
+  <meta property="og:image" content="https://zyrvath.com/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zyrvath">
-  <meta name="twitter:description" content="Zyrvath is an independent game studio crafting worlds worth getting lost in.">
-  <meta name="twitter:image" content="https://zyrvath.com/opengraph.jpg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg:      #050610;
-    --surface: #09101e;
-    --border:  #16213a;
-    --accent:  #ff7800;
-    --accent2: #f59e0b;
-    --glow:    rgba(255,120,0,0.8);
-    --glow2:   rgba(255,120,0,0.35);
-    --text:    #e8f1f5;
-    --muted:   #8fa3bb;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Rajdhani', sans-serif;
-    background: var(--bg); color: var(--text);
-    line-height: 1.65; min-height: 100vh;
-    display: flex; flex-direction: column; overflow-x: hidden;
-  }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { color: #ffad52; text-decoration: underline; }
 
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(5,6,16,0.93);
-    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 1rem; height: 56px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Orbitron', monospace; font-weight: 900;
-    font-size: 0.95rem; letter-spacing: 0.15em; color: #fff;
-    text-shadow: 0 0 8px var(--glow), 0 0 20px var(--glow2);
-    text-decoration: none; flex-shrink: 0;
-  }
-  .nav-logo:hover { text-decoration: none; color: #fff; }
-  .nav-toggle {
-    display: flex; flex-direction: column; justify-content: center; gap: 5px;
-    background: none; border: none; cursor: pointer; padding: 8px; margin: -8px -4px -8px 0;
-  }
-  .nav-toggle span {
-    display: block; width: 20px; height: 2px; background: var(--text); border-radius: 2px;
-    transition: transform 0.22s ease, opacity 0.18s ease; transform-origin: center;
-  }
-  nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  nav.open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:      #050610;
+  --surface: #09101e;
+  --border:  #16213a;
+  --accent:  #ff7800;
+  --accent2: #f59e0b;
+  --glow:    rgba(255,120,0,0.75);
+  --glow2:   rgba(255,120,0,0.3);
+  --text:    #e8f1f5;
+  --muted:   #8fa3bb;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.65; min-height: 100vh;
+  display: flex; flex-direction: column; overflow-x: hidden;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: #ffad52; text-decoration: none; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(5,6,16,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.25rem; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  display: flex; align-items: center; flex-shrink: 0;
+  text-decoration: none;
+}
+.nav-logo img {
+  height: 34px; width: auto;
+  filter: drop-shadow(0 0 8px var(--glow)) drop-shadow(0 0 20px var(--glow2));
+  transition: filter 0.2s;
+}
+.nav-logo:hover img {
+  filter: drop-shadow(0 0 12px var(--glow)) drop-shadow(0 0 30px rgba(255,120,0,0.5));
+}
+.nav-toggle {
+  display: flex; flex-direction: column; justify-content: center; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 8px; margin: -8px -4px -8px 0;
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.18s ease; transform-origin: center;
+}
+nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-links {
+  display: none; list-style: none;
+  position: absolute; top: 60px; left: 0; right: 0;
+  background: rgba(5,6,16,0.97); border-bottom: 1px solid var(--border);
+  flex-direction: column; padding: 0.4rem 0;
+}
+nav.open .nav-links { display: flex; }
+.nav-links a {
+  display: block; color: var(--muted);
+  font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.75rem 1.5rem; transition: color 0.15s, background 0.15s;
+}
+.nav-links a:hover { color: var(--accent); background: rgba(255,120,0,0.05); }
+.nav-links a.active { color: var(--accent); }
+@media (min-width: 640px) {
+  nav { padding: 0 2rem; height: 68px; }
+  .nav-logo img { height: 40px; }
+  .nav-toggle { display: none; }
   .nav-links {
-    display: none; list-style: none;
-    position: absolute; top: 56px; left: 0; right: 0;
-    background: rgba(5,6,16,0.97); border-bottom: 1px solid var(--border);
-    flex-direction: column; padding: 0.5rem 0;
+    display: flex !important; flex-direction: row; position: static;
+    background: none; border: none; padding: 0; gap: 0;
   }
-  nav.open .nav-links { display: flex; }
-  .nav-links a {
-    display: block; color: var(--muted); font-family: 'Rajdhani', sans-serif;
-    font-size: 1rem; font-weight: 600; letter-spacing: 0.04em;
-    padding: 0.75rem 1.25rem; transition: color 0.15s, background 0.15s;
-  }
-  .nav-links a:hover { color: var(--accent); background: rgba(255,120,0,0.06); text-decoration: none; }
-  .nav-links a.active { color: var(--accent); }
-  @media (min-width: 640px) {
-    nav { padding: 0 2rem; height: 64px; }
-    .nav-logo { font-size: 1.05rem; }
-    .nav-toggle { display: none; }
-    .nav-links {
-      display: flex !important; flex-direction: row; position: static;
-      background: none; border: none; padding: 0; gap: 0.15rem;
-    }
-    .nav-links a { padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.9rem; }
-    .nav-links a:hover { background: rgba(255,120,0,0.08); }
-  }
+  .nav-links a { padding: 0.4rem 0.85rem; border-radius: 5px; font-size: 0.82rem; }
+  .nav-links a:hover { background: rgba(255,120,0,0.07); }
+}
 
-  /* LAYOUT */
-  main { flex: 1; width: 100%; max-width: 820px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+/* ── LAYOUT ── */
+main { flex: 1; width: 100%; max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 3.5rem; }
 
-  /* TYPOGRAPHY */
-  .badge {
-    display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--accent);
-    background: rgba(255,120,0,0.1); border: 1px solid rgba(255,120,0,0.3);
-    border-radius: 100px; padding: 0.28rem 0.85rem; margin-bottom: 1.1rem;
-    font-family: 'Orbitron', monospace;
-  }
-  h1 {
-    font-family: 'Orbitron', monospace; font-weight: 900;
-    font-size: 1.7rem; line-height: 1.15; color: #fff; margin-bottom: 1rem;
-  }
-  h2 {
-    font-family: 'Orbitron', monospace; font-weight: 700;
-    font-size: 1rem; color: #fff; margin: 2rem 0 0.6rem; letter-spacing: 0.05em;
-  }
-  h3 {
-    font-family: 'Rajdhani', sans-serif; font-weight: 700;
-    font-size: 0.95rem; color: var(--text); margin: 1.25rem 0 0.4rem;
-  }
-  p { color: var(--muted); margin-bottom: 0.85rem; font-size: 1.05rem; }
-  p:last-child { margin-bottom: 0; }
-  .lead { font-size: 1.1rem; color: var(--text); margin-bottom: 1.25rem; }
-  ul, ol { color: var(--muted); padding-left: 1.35rem; margin-bottom: 0.9rem; font-size: 1.05rem; }
-  li { margin-bottom: 0.35rem; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
-  .updated { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+/* ── TYPE ── */
+.badge {
+  display: inline-block; font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent); background: rgba(255,120,0,0.09);
+  border: 1px solid rgba(255,120,0,0.28); border-radius: 2px;
+  padding: 0.28rem 0.8rem; margin-bottom: 1rem;
+  font-family: 'Orbitron', monospace;
+}
+h1 {
+  font-family: 'Orbitron', monospace; font-weight: 900;
+  font-size: 1.65rem; line-height: 1.15; color: #fff; margin-bottom: 1rem;
+}
+h2 {
+  font-family: 'Orbitron', monospace; font-weight: 700;
+  font-size: 0.95rem; letter-spacing: 0.07em; color: #fff;
+  margin: 2.25rem 0 0.6rem; text-transform: uppercase;
+}
+h3 {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 0.95rem; color: var(--text); margin: 1.1rem 0 0.35rem;
+}
+p { color: var(--muted); margin-bottom: 0.85rem; font-size: 1.05rem; }
+p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.1rem; color: var(--text); margin-bottom: 1.25rem; }
+ul, ol { color: var(--muted); padding-left: 1.35rem; margin-bottom: 0.85rem; font-size: 1.05rem; }
+li { margin-bottom: 0.3rem; }
+hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+.updated { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; font-family:'Orbitron',monospace; letter-spacing:0.05em; }
 
-  /* CARDS */
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem;
-  }
+/* ── CARD ── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 2px solid rgba(255,120,0,0.3);
+  border-radius: 4px; padding: 1.35rem; margin-bottom: 1rem;
+}
+.card h2 { margin-top: 0; }
 
-  /* FOOTER */
-  footer { background: var(--surface); border-top: 1px solid var(--border); padding: 1.5rem 1rem; }
-  .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 0.75rem; }
-  .footer-links a { color: var(--muted); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; }
-  .footer-links a:hover { color: var(--accent); text-decoration: none; }
-  .footer-copy { color: var(--muted); font-size: 0.75rem; text-align: center; font-family: 'Rajdhani', sans-serif; }
+/* ── FOOTER ── */
+footer {
+  background: var(--surface); border-top: 1px solid var(--border);
+  padding: 1.75rem 1.25rem 2rem;
+}
+.footer-inner { max-width: 820px; margin: 0 auto; }
+.footer-logo {
+  display: flex; justify-content: center; margin-bottom: 1.25rem;
+}
+.footer-logo img {
+  height: 36px; width: auto; opacity: 0.7;
+  filter: drop-shadow(0 0 6px var(--glow2));
+}
+.footer-links {
+  display: flex; flex-wrap: wrap; gap: 0.85rem;
+  justify-content: center; margin-bottom: 1rem;
+}
+.footer-links a {
+  color: var(--muted); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+.footer-links a:hover { color: var(--accent); }
+.footer-copy { color: var(--muted); font-size: 0.72rem; text-align: center; letter-spacing: 0.04em; }
+.footer-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 1.25rem; }
 
-  @media (min-width: 640px) {
-    main { padding: 3.5rem 2rem 4rem; }
-    h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
-    h2 { font-size: 1.1rem; margin: 2.5rem 0 0.75rem; }
-    .card { padding: 1.75rem; margin-bottom: 1.25rem; }
-    footer { padding: 2rem; }
-    .footer-links { gap: 1.5rem; }
-  }
-  @media (min-width: 1024px) { .card { padding: 2rem; margin-bottom: 1.5rem; } }
+@media (min-width: 640px) {
+  main { padding: 4rem 2rem 5rem; }
+  h1 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); }
+  h2 { font-size: 1.05rem; }
+  .card { padding: 1.75rem; margin-bottom: 1.25rem; }
+  footer { padding: 2.25rem 2rem 2.5rem; }
+}
+@media (min-width: 1024px) { .card { padding: 2rem; margin-bottom: 1.5rem; } }
 
-  /* HERO */
-  .hero {
-    flex: 1; display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    text-align: center; padding: 4rem 1.25rem 3rem;
-    position: relative; overflow: hidden;
-  }
-  .hero-glow {
-    position: absolute; inset: 0; pointer-events: none;
-    background:
-      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,120,0,0.14), transparent 70%),
-      radial-gradient(ellipse 40% 30% at 80% 80%, rgba(245,158,11,0.08), transparent 60%);
-  }
 
-  /* Animated logo mark */
-  .logo-mark {
-    position: relative; width: 80px; height: 80px; margin: 0 auto 2rem;
-    animation: logo-float 4s ease-in-out infinite;
-  }
-  @keyframes logo-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-  .logo-ring {
-    position: absolute; inset: 0; border-radius: 50%;
-    border: 2px solid rgba(255,120,0,0.5);
-    animation: ring-pulse 3s ease-in-out infinite;
-  }
-  .logo-ring:nth-child(2) { inset: 8px; border-color: rgba(245,158,11,0.4); animation-delay: 0.4s; }
-  .logo-ring:nth-child(3) { inset: 18px; border-color: rgba(255,150,50,0.3); animation-delay: 0.8s; }
-  @keyframes ring-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.06)} }
-  .logo-core {
-    position: absolute; inset: 28px; border-radius: 50%;
-    background: linear-gradient(135deg, #ff7800, #f59e0b);
-    box-shadow: 0 0 24px rgba(255,120,0,0.7), 0 0 60px rgba(255,120,0,0.25);
-    animation: core-pulse 3s ease-in-out infinite;
-  }
-  @keyframes core-pulse {
-    0%,100%{box-shadow:0 0 24px rgba(255,120,0,0.7),0 0 60px rgba(255,120,0,0.25)}
-    50%{box-shadow:0 0 40px rgba(255,120,0,0.95),0 0 80px rgba(245,158,11,0.35)}
-  }
-  .logo-orbit { position:absolute;inset:0;animation:orbit 6s linear infinite; }
-  .logo-orbit::after {
-    content:''; position:absolute; top:-3px; left:50%; width:6px; height:6px;
-    margin-left:-3px; background:var(--accent); border-radius:50%;
-    box-shadow:0 0 8px var(--accent), 0 0 14px rgba(255,120,0,0.5);
-  }
-  @keyframes orbit { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+/* ── HERO ── */
+.hero {
+  position: relative; min-height: calc(100vh - 60px);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 3rem 1.5rem 4rem;
+  overflow: hidden;
+}
+/* Ambient background glow */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,100,0,0.1) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255,80,0,0.06) 0%, transparent 60%);
+}
+/* Subtle scanline texture */
+.hero::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 2px,
+    rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 4px
+  );
+  z-index: 0;
+}
+.hero-content { position: relative; z-index: 1; }
 
-  /* Hero title */
-  .hero h1 {
-    font-size: 2rem; font-weight: 900; line-height: 1.15; color: #fff;
-    margin-bottom: 1rem; max-width: 640px;
-    text-shadow: 0 0 40px rgba(255,120,0,0.12);
-  }
-  .hero h1 .grad {
-    background: linear-gradient(135deg, #ff7800, #f59e0b);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  }
-  .hero > p { font-size: 1.05rem; color: var(--muted); max-width: 480px; margin: 0 auto 2rem; }
+/* Big logo mark */
+.hero-logo {
+  width: 140px; height: auto; margin: 0 auto 1.75rem;
+  filter:
+    drop-shadow(0 0 20px rgba(255,120,0,0.7))
+    drop-shadow(0 0 50px rgba(255,100,0,0.35))
+    drop-shadow(0 0 90px rgba(255,80,0,0.15));
+  animation: hero-float 5s ease-in-out infinite;
+}
+@keyframes hero-float {
+  0%,100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 20px rgba(255,120,0,0.7)) drop-shadow(0 0 50px rgba(255,100,0,0.35)) drop-shadow(0 0 90px rgba(255,80,0,0.15)); }
+  50%  { transform: translateY(-10px) scale(1.01); filter: drop-shadow(0 0 28px rgba(255,130,0,0.9)) drop-shadow(0 0 65px rgba(255,100,0,0.5)) drop-shadow(0 0 110px rgba(255,80,0,0.2)); }
+}
 
-  /* Hero buttons */
-  .hero-btns { display: flex; flex-direction: column; gap: 0.75rem; width:100%; max-width:300px; margin:0 auto; }
-  .btn-play {
-    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-    background: linear-gradient(135deg, #ff7800, #f59e0b);
-    color: #050610; font-family:'Orbitron',monospace; font-weight: 700;
-    font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 1rem 2rem; border-radius: 8px; text-decoration: none;
-    box-shadow: 0 0 24px rgba(255,120,0,0.4), 0 4px 16px rgba(0,0,0,0.4);
-    transition: box-shadow 0.2s, opacity 0.2s;
-  }
-  .btn-play:hover { opacity: 0.88; box-shadow: 0 0 36px rgba(255,120,0,0.6), 0 4px 20px rgba(0,0,0,0.4); text-decoration:none; color:#050610; }
-  .btn-play svg { width:16px; height:16px; flex-shrink:0; }
-  .btn-ghost {
-    display: block; text-align: center;
-    border: 1px solid var(--border); color: var(--muted);
-    font-weight: 600; font-size: 0.95rem;
-    padding: 0.85rem 1.75rem; border-radius: 8px;
-    transition: color 0.2s, border-color 0.2s; text-decoration: none;
-  }
-  .btn-ghost:hover { color:var(--accent); border-color:rgba(255,120,0,0.4); text-decoration:none; }
+/* Eyebrow line */
+.hero-eyebrow {
+  display: block; font-family: 'Orbitron', monospace;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+.hero-eyebrow span {
+  color: var(--accent);
+}
 
-  @media (min-width: 640px) {
-    .hero { padding: 5rem 2rem 4rem; }
-    .logo-mark { width:100px; height:100px; margin-bottom:2.5rem; }
-    .logo-core { inset:34px; }
-    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); }
-    .hero > p { font-size: 1.1rem; }
-    .hero-btns { flex-direction:row; max-width:none; justify-content:center; }
-    .btn-play, .btn-ghost { width:auto; }
-  }
+/* Main headline */
+.hero h1 {
+  font-family: 'Orbitron', monospace; font-weight: 900;
+  font-size: clamp(1.55rem, 6vw, 3.4rem);
+  line-height: 1.1; color: #fff; margin-bottom: 0;
+  letter-spacing: -0.01em;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, #ff7800 0%, #f59e0b 60%, #ff7800 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer { to { background-position: 200% center; } }
 
-  /* MANIFESTO */
-  .manifesto {
-    background: var(--surface); border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border); padding: 3rem 1.25rem;
-  }
-  .manifesto h2 {
-    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--muted); text-align: center; margin-bottom: 2rem;
-    font-family: 'Orbitron', monospace;
-  }
-  .manifesto-grid { display: grid; grid-template-columns:1fr; gap:0.85rem; max-width:840px; margin:0 auto; }
-  .manifesto-item {
-    background: var(--bg); border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.15rem;
-  }
-  .manifesto-item h3 {
-    font-size: 0.82rem; font-weight: 700; color: var(--accent);
-    margin-bottom: 0.35rem; font-family:'Orbitron',monospace; letter-spacing:0.04em;
-  }
-  .manifesto-item p { font-size: 0.9rem; color: var(--muted); margin: 0; }
-  @media (min-width:640px) {
-    .manifesto { padding:4rem 2rem; }
-    .manifesto-grid { grid-template-columns:1fr 1fr; gap:1rem; }
-    .manifesto-item { padding:1.35rem; }
-  }
-  @media (min-width:1024px) { .manifesto-grid { grid-template-columns:1fr 1fr 1fr; } }
+/* Sub copy — short, punchy, not generic */
+.hero-sub {
+  max-width: 440px; margin: 1.5rem auto 0;
+  font-size: 1rem; color: var(--muted); line-height: 1.6;
+}
 
-  /* GAMES TEASER */
-  .games-section { padding:3rem 1.25rem; max-width:840px; margin:0 auto; width:100%; }
-  .section-label {
-    font-size:0.62rem; font-weight:700; letter-spacing:0.16em;
-    text-transform:uppercase; color:var(--muted); margin-bottom:0.75rem;
-    display:block; font-family:'Orbitron',monospace;
-  }
-  .games-section h2 {
-    font-size:1.3rem; color:#fff; margin:0 0 0.5rem;
-    font-family:'Orbitron',monospace; font-weight:900; letter-spacing:0.04em;
-  }
-  .games-section > p { color:var(--muted); font-size:1rem; margin-bottom:1.5rem; }
-  .game-card {
-    background:var(--surface); border:1px solid var(--border);
-    border-radius:12px; padding:1.5rem; position:relative; overflow:hidden;
-  }
-  .game-card::before {
-    content:''; position:absolute; inset:0; pointer-events:none;
-    background:radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255,120,0,0.06), transparent);
-  }
-  .game-card-status {
-    display:inline-block; font-size:0.58rem; font-weight:900; letter-spacing:0.18em;
-    text-transform:uppercase; color:#050610;
-    background:linear-gradient(135deg,#ff7800,#f59e0b);
-    border-radius:100px; padding:0.22rem 0.75rem; margin-bottom:0.85rem;
-    font-family:'Orbitron',monospace;
-  }
-  .game-card h3 { font-size:1.1rem; font-weight:900; color:#fff; margin-bottom:0.4rem; font-family:'Orbitron',monospace; }
-  .game-card p { color:var(--muted); font-size:0.9rem; margin-bottom:0.85rem; }
-  .game-meta { display:flex; flex-wrap:wrap; gap:0.45rem; }
-  .meta-tag {
-    font-size:0.7rem; color:var(--muted); background:rgba(255,255,255,0.03);
-    border:1px solid var(--border); border-radius:5px; padding:0.2rem 0.55rem;
-    font-family:'Rajdhani',sans-serif; font-weight:600; letter-spacing:0.03em;
-  }
-  @media (min-width:640px) { .games-section { padding:4rem 2rem; } }
-</style>
+/* Divider line */
+.hero-divider {
+  width: 40px; height: 2px; margin: 2rem auto;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* CTA buttons */
+.hero-btns {
+  display: flex; flex-direction: column; gap: 0.75rem;
+  width: 100%; max-width: 320px; margin: 0 auto;
+}
+.btn-primary {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  background: linear-gradient(135deg, #ff7800 0%, #f59e0b 100%);
+  color: #050610; font-family: 'Orbitron', monospace; font-weight: 900;
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 1.05rem 2rem; border-radius: 3px;
+  box-shadow: 0 0 28px rgba(255,120,0,0.45), 0 6px 20px rgba(0,0,0,0.5);
+  transition: box-shadow 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+.btn-primary:hover { box-shadow: 0 0 42px rgba(255,130,0,0.65), 0 8px 24px rgba(0,0,0,0.5); transform: translateY(-1px); color:#050610; }
+.btn-primary svg { width: 14px; height: 14px; flex-shrink: 0; }
+.btn-secondary {
+  display: block; text-align: center;
+  border: 1px solid rgba(255,120,0,0.25); color: var(--muted);
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.9rem; border-radius: 3px;
+  transition: color 0.2s, border-color 0.2s; text-decoration: none;
+}
+.btn-secondary:hover { color: var(--accent); border-color: rgba(255,120,0,0.5); }
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute; bottom: 1.75rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  font-family: 'Orbitron', monospace; font-size: 0.5rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+  opacity: 0.5; z-index: 1;
+}
+.scroll-hint::after {
+  content: ''; width: 1px; height: 32px;
+  background: linear-gradient(to bottom, var(--muted), transparent);
+  animation: scroll-pulse 1.8s ease-in-out infinite;
+}
+@keyframes scroll-pulse { 0%,100%{opacity:0.5;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(1.2)} }
+
+/* ── GAME FEATURE ── */
+.feature {
+  border-top: 1px solid var(--border);
+  padding: 4rem 1.5rem;
+  position: relative; overflow: hidden;
+}
+.feature::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,120,0,0.4) 50%, transparent 100%);
+}
+.feature-inner { max-width: 820px; margin: 0 auto; }
+.feature-kicker {
+  font-family: 'Orbitron', monospace; font-size: 0.58rem;
+  font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.25rem; display: block;
+}
+.feature h2 {
+  font-family: 'Orbitron', monospace; font-weight: 900;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  color: #fff; margin: 0 0 1rem; text-transform: none; letter-spacing: -0.01em;
+}
+.feature p {
+  font-size: 1.05rem; color: var(--muted);
+  max-width: 600px; margin-bottom: 2rem;
+}
+.game-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-top: 2px solid rgba(255,120,0,0.5);
+  border-radius: 4px; padding: 1.5rem; position: relative; overflow: hidden;
+}
+.game-card::after {
+  content: '';
+  position: absolute; top: 0; right: 0; width: 120px; height: 120px;
+  background: radial-gradient(circle at top right, rgba(255,120,0,0.07), transparent 70%);
+  pointer-events: none;
+}
+.game-tag {
+  font-family: 'Orbitron', monospace; font-size: 0.55rem;
+  font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #050610; background: linear-gradient(135deg, #ff7800, #f59e0b);
+  border-radius: 2px; padding: 0.22rem 0.7rem; display: inline-block;
+  margin-bottom: 0.85rem;
+}
+.game-card h3 {
+  font-family: 'Orbitron', monospace; font-weight: 900;
+  font-size: 1.1rem; color: #fff; margin: 0 0 0.5rem;
+}
+.game-card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 1rem; }
+.game-card-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+.game-card-meta span {
+  font-family: 'Rajdhani', sans-serif; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 2px; padding: 0.18rem 0.5rem;
+}
+.btn-play-sm {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: linear-gradient(135deg, #ff7800, #f59e0b);
+  color: #050610; font-family: 'Orbitron', monospace; font-weight: 900;
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.75rem 1.4rem; border-radius: 3px;
+  box-shadow: 0 0 18px rgba(255,120,0,0.3);
+  transition: box-shadow 0.2s, transform 0.15s; text-decoration: none;
+}
+.btn-play-sm:hover { box-shadow: 0 0 28px rgba(255,120,0,0.5); transform: translateY(-1px); color:#050610; }
+.btn-play-sm svg { width: 13px; height: 13px; }
+
+/* ── MANIFESTO — editorial single-column ── */
+.manifesto {
+  border-top: 1px solid var(--border);
+  padding: 4rem 1.5rem;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
+}
+.manifesto-inner { max-width: 680px; margin: 0 auto; }
+.manifesto-kicker {
+  font-family: 'Orbitron', monospace; font-size: 0.58rem;
+  font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 2rem; display: block;
+}
+.manifesto-text {
+  font-family: 'Rajdhani', sans-serif; font-weight: 500;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.75; color: var(--muted);
+}
+.manifesto-text strong {
+  color: #fff; font-weight: 700;
+}
+.manifesto-text .accent {
+  color: var(--accent);
+}
+.manifesto-link {
+  display: inline-block; margin-top: 2rem;
+  font-family: 'Orbitron', monospace; font-size: 0.68rem;
+  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); border-bottom: 1px solid rgba(255,120,0,0.3);
+  padding-bottom: 2px; transition: border-color 0.2s;
+}
+.manifesto-link:hover { border-color: var(--accent); }
+
+@media (min-width: 640px) {
+  nav { height: 68px; }
+  .hero { min-height: calc(100vh - 68px); padding: 4rem 2rem 5rem; }
+  .hero-logo { width: 180px; margin-bottom: 2.25rem; }
+  .hero-btns { flex-direction: row; max-width: none; justify-content: center; }
+  .btn-primary, .btn-secondary { width: auto; }
+  .feature { padding: 5rem 2rem; }
+  .manifesto { padding: 5rem 2rem; }
+}
+@media (min-width: 1024px) {
+  .hero-logo { width: 200px; }
+}
+  </style>
 </head>
 <body>
 <nav id="site-nav">
-  <a class="nav-logo" href="/">ZYRVATH</a>
+  <a class="nav-logo" href="/" aria-label="Zyrvath Home">
+    <img src="/logo.png" alt="Zyrvath">
+  </a>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
@@ -318,85 +429,78 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-glow"></div>
-  <div class="logo-mark">
-    <div class="logo-ring"></div>
-    <div class="logo-ring"></div>
-    <div class="logo-ring"></div>
-    <div class="logo-core"></div>
-    <div class="logo-orbit"></div>
+  <div class="hero-content">
+    <img class="hero-logo" src="/logo.png" alt="Zyrvath">
+    <span class="hero-eyebrow">Est. 2024 &nbsp;&bull;&nbsp; <span>Independent Studio</span></span>
+    <h1>Built for players who<br>want <em>more</em>.</h1>
+    <p class="hero-sub">Not more content. More weight. More atmosphere. The kind of game that does not let go.</p>
+    <div class="hero-divider"></div>
+    <div class="hero-btns">
+      <a class="btn-primary" href="/play.html">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"/></svg>
+        Play Demo
+      </a>
+      <a class="btn-secondary" href="/games.html">See the Games</a>
+    </div>
   </div>
-  <span class="badge">Independent Game Studio</span>
-  <h1>We build worlds worth<br><span class="grad">getting lost in.</span></h1>
-  <p>Zyrvath is a small studio obsessed with atmosphere, craft, and games that stay with you long after you stop playing.</p>
-  <div class="hero-btns">
-    <a class="btn-play" href="/play.html">
-      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"/></svg>
-      Play Game Demo
-    </a>
-    <a class="btn-ghost" href="/about.html">About the Studio</a>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- GAME FEATURE -->
+<section class="feature">
+  <div class="feature-inner">
+    <span class="feature-kicker">In Development</span>
+    <h2>Project Zyrvath.</h2>
+    <p>An atmospheric puzzle adventure. No HUD. No waypoints. Just you, the environment, and the tension of not knowing what comes next.</p>
+    <div class="game-card">
+      <div class="game-tag">Active Dev</div>
+      <h3>Project Zyrvath</h3>
+      <p>A game about observation and consequence. Every surface is a clue. Every silence is intentional. You will not be told where to go.</p>
+      <div class="game-card-meta">
+        <span>Puzzle Adventure</span>
+        <span>PC</span>
+        <span>Early Demo Live</span>
+      </div>
+      <a class="btn-play-sm" href="/play.html">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"/></svg>
+        Play Now
+      </a>
+    </div>
   </div>
 </section>
 
+<!-- MANIFESTO — editorial, not a grid -->
 <section class="manifesto">
-  <h2>What we stand for</h2>
-  <div class="manifesto-grid">
-    <div class="manifesto-item">
-      <h3>Atmosphere over spectacle</h3>
-      <p>A still room can be more tense than an explosion. We design for feeling first, feature lists never.</p>
-    </div>
-    <div class="manifesto-item">
-      <h3>Respect the player</h3>
-      <p>No hand-holding, no padding. If something is in the game, it earns its place.</p>
-    </div>
-    <div class="manifesto-item">
-      <h3>Ship when it is ready</h3>
-      <p>Calendars do not make great games. We release when we believe in what we are releasing.</p>
-    </div>
-    <div class="manifesto-item">
-      <h3>Small is a strength</h3>
-      <p>Every person on the team ships work that matters. No committee, no compromise on vision.</p>
-    </div>
-    <div class="manifesto-item">
-      <h3>Depth over volume</h3>
-      <p>One memorable game is worth more than ten forgettable ones. We choose depth every time.</p>
-    </div>
-    <div class="manifesto-item">
-      <h3>Sound is design</h3>
-      <p>Audio is not decoration. It carries information, builds tension, and defines worlds.</p>
-    </div>
-  </div>
-</section>
-
-<section class="games-section">
-  <span class="section-label">Current Project</span>
-  <h2>Something is coming.</h2>
-  <p>Our first title is in active development. When we are ready to show everything, you will know.</p>
-  <div class="game-card">
-    <div class="game-card-status">In Development</div>
-    <h3>Project Zyrvath</h3>
-    <p>An atmospheric puzzle adventure built around tension, observation, and discovery. The kind of game where the environment tells you more than the dialogue ever could.</p>
-    <div class="game-meta">
-      <span class="meta-tag">Puzzle Adventure</span>
-      <span class="meta-tag">PC</span>
-      <span class="meta-tag">Active Development</span>
-    </div>
-  </div>
-  <div style="margin-top:1.25rem;">
-    <a href="/games.html" style="font-weight:700;font-size:0.95rem;color:var(--accent);letter-spacing:0.02em;">View all games and demo info &rarr;</a>
+  <div class="manifesto-inner">
+    <span class="manifesto-kicker">Who we are</span>
+    <p class="manifesto-text">
+      We are <strong>not a big studio</strong>. We do not have a marketing team or a publisher breathing down our neck.
+      We have <span class="accent">one project</span>, one focus, and zero interest in shipping something we would not play ourselves.<br><br>
+      <strong>Games take time.</strong> We will take the time. When it is done, it will be worth it.
+    </p>
+    <a class="manifesto-link" href="/about.html">More about the studio &rarr;</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-links">
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Service</a>
-    <a href="/cookies.html">Cookie Policy</a>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="/"><img src="/logo.png" alt="Zyrvath"></a>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/games.html">Games</a>
+      <a href="/how-to-play.html">How to Play</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/cookies.html">Cookies</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Zyrvath Studio. All rights reserved.</p>
   </div>
-  <p class="footer-copy">&copy; 2025 Zyrvath. All rights reserved.</p>
 </footer>
 <script>
 function toggleNav(btn) {
@@ -408,7 +512,7 @@ function toggleNav(btn) {
 document.addEventListener('click', e => {
   if (!e.target.closest('nav')) {
     const nav = document.getElementById('site-nav');
-    if (nav) { nav.classList.remove('open'); const b = nav.querySelector('.nav-toggle'); if(b) b.setAttribute('aria-expanded',false); }
+    if (nav) { nav.classList.remove('open'); const b=nav.querySelector('.nav-toggle'); if(b) b.setAttribute('aria-expanded',false); }
   }
 });
 document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
