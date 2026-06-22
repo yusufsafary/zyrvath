@@ -18,51 +18,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/site.css">
   <style>
-  .contact-layout{
-    display:grid;gap:3rem;padding:3.5rem 0;
-  }
-  .contact-card{
-    background:var(--surface2);border:1px solid var(--border);
-    border-top:2px solid rgba(255,120,0,.4);padding:2.5rem;
-    display:flex;flex-direction:column;gap:.75rem;
-  }
+  .page-hero{position:relative;overflow:hidden}
+  .ph-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none}
+  .ph-grid{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.025;background-image:linear-gradient(rgba(255,120,0,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,120,0,1) 1px,transparent 1px);background-size:80px 80px}
+  .ph-reticle{position:absolute;width:28px;height:28px;z-index:2;pointer-events:none}
+  .ph-reticle--tl{top:1.25rem;left:1.25rem;border-top:2px solid rgba(255,120,0,.4);border-left:2px solid rgba(255,120,0,.4)}
+  .ph-reticle--tr{top:1.25rem;right:1.25rem;border-top:2px solid rgba(255,120,0,.4);border-right:2px solid rgba(255,120,0,.4)}
+  .page-hero__inner{position:relative;z-index:3}
+  .contact-layout{display:grid;gap:3rem;padding:3.5rem 0}
+  .contact-card{background:var(--surface2);border:1px solid var(--border);border-top:2px solid rgba(255,120,0,.4);padding:2.5rem;display:flex;flex-direction:column;gap:.75rem}
   .contact-card h2{font-size:1rem;margin-bottom:.25rem}
-  .contact-card .email-link{
-    display:inline-flex;align-items:center;gap:.5rem;
-    font-family:var(--font-display);font-size:.85rem;font-weight:700;
-    color:var(--accent);letter-spacing:.05em;margin-top:.25rem;
-    transition:color .15s;
-  }
+  .contact-card .email-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:.05em;margin-top:.25rem;transition:color .15s}
   .contact-card .email-link:hover{color:#ffaa52}
   .contact-card .email-link svg{width:16px;height:16px;flex-shrink:0}
   .contact-topics{list-style:none;padding:0;margin:0}
-  .contact-topics li{
-    padding:.6rem 0;border-bottom:1px solid var(--border);
-    font-size:.95rem;color:var(--muted);
-    display:flex;align-items:center;gap:.75rem;
-  }
+  .contact-topics li{padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.95rem;color:var(--muted);display:flex;align-items:center;gap:.75rem}
   .contact-topics li:last-child{border-bottom:none}
   .contact-topics li::before{content:'→';color:var(--accent);font-family:var(--font-display);font-size:.75rem}
-  .honest-note{
-    font-family:var(--font-display);font-size:.62rem;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--muted2);
-    border:1px solid var(--border);padding:.6rem 1rem;margin-top:1rem;
-    display:inline-block;
-  }
-  @media(min-width:640px){
-    .contact-layout{grid-template-columns:1fr 1fr;padding:5rem 0}
-  }
+  .honest-note{font-family:var(--font-display);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);border:1px solid var(--border);padding:.6rem 1rem;margin-top:1rem;display:inline-block}
+  @media(min-width:640px){.contact-layout{grid-template-columns:1fr 1fr;padding:5rem 0}}
   </style>
 </head>
 <body data-page="contact">
 <nav id="main-nav">
-  <a class="nav-logo" href="/">
-    <img src="/logo.png" alt="Zyrvath">
-    <span class="nav-wordmark">ZYRVATH</span>
-  </a>
-  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <a class="nav-logo" href="/"><img src="/logo.png" alt="Zyrvath"><span class="nav-wordmark">ZYRVATH</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="/games.html">Games</a></li>
     <li><a href="/about.html">Studio</a></li>
@@ -71,16 +51,18 @@
     <li><a href="/play.html" style="color:var(--accent)">▶ Play Demo</a></li>
   </ul>
 </nav>
-
 <main>
   <div class="page-hero">
+    <canvas class="ph-canvas"></canvas>
+    <div class="ph-grid"></div>
+    <div class="ph-reticle ph-reticle--tl"></div>
+    <div class="ph-reticle ph-reticle--tr"></div>
     <div class="page-hero__inner">
       <span class="kicker">Contact</span>
       <h1>We read every message.</h1>
       <p class="lead">No ticket system. No automated replies. A real person reads your message and writes back. Response time is honest, not instant.</p>
     </div>
   </div>
-
   <section class="section">
     <div class="container">
       <div class="contact-layout">
@@ -88,9 +70,7 @@
           <h2>Send a message</h2>
           <p>Use this address for anything — bugs, feedback, questions about the game, press inquiries, or just to say you played the demo.</p>
           <a class="email-link" href="mailto:studio@zyrvath.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/>
-            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
             studio@zyrvath.com
           </a>
           <div class="honest-note">Response within 1–3 business days</div>
@@ -112,34 +92,18 @@
     </div>
   </section>
 </main>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-brand">
-        <img src="/logo.png" alt="Zyrvath">
-        <span>Zyrvath Studio</span>
-      </div>
-      <nav class="footer-nav">
-        <a href="/games.html">Games</a>
-        <a href="/about.html">Studio</a>
-        <a href="/how-to-play.html">How to Play</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/play.html">Demo</a>
-      </nav>
+      <div class="footer-brand"><img src="/logo.png" alt="Zyrvath"><span>Zyrvath Studio</span></div>
+      <nav class="footer-nav"><a href="/games.html">Games</a><a href="/about.html">Studio</a><a href="/how-to-play.html">How to Play</a><a href="/contact.html">Contact</a><a href="/play.html">Demo</a></nav>
     </div>
-    <div class="footer-bottom">
-      <p>© 2024–2026 Zyrvath Studio · <a href="/privacy.html" style="color:var(--muted2)">Privacy</a> · <a href="/terms.html" style="color:var(--muted2)">Terms</a> · <a href="/cookies.html" style="color:var(--muted2)">Cookies</a></p>
-    </div>
+    <div class="footer-bottom"><p>© 2024–2026 Zyrvath Studio · <a href="/privacy.html" style="color:var(--muted2)">Privacy</a> · <a href="/terms.html" style="color:var(--muted2)">Terms</a> · <a href="/cookies.html" style="color:var(--muted2)">Cookies</a></p></div>
   </div>
 </footer>
 <script>
-(function(){
-  var nav=document.getElementById('main-nav');
-  var btn=nav.querySelector('.nav-toggle');
-  btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open)});
-  nav.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')==='/contact.html')a.classList.add('active')});
-})();
+(function(){var nav=document.getElementById('main-nav');var btn=nav.querySelector('.nav-toggle');btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open)});nav.querySelectorAll('.nav-links a').forEach(function(a){if(a.getAttribute('href')==='/contact.html')a.classList.add('active')});})();
+(function(){var canvas=document.querySelector('.ph-canvas');if(!canvas)return;var ctx=canvas.getContext('2d');var dpr=Math.min(window.devicePixelRatio||1,2);var W=0,H=0,stars=[];function resize(){var r=canvas.parentElement.getBoundingClientRect();W=r.width;H=r.height;canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);ctx.scale(dpr,dpr);init()}function init(){stars=[];var n=Math.max(50,Math.min(Math.round((W*H)/5000),200));for(var i=0;i<n;i++){var b=Math.random()>.88;stars.push({x:Math.random()*W,y:Math.random()*H,r:b?(Math.random()*1.3+.6):(Math.random()*.65+.15),baseOp:Math.random()*.5+.2,phase:Math.random()*Math.PI*2,bright:b,speed:Math.random()*.1+.03})}}var lt=0;function draw(ts){requestAnimationFrame(draw);var dt=ts-lt;lt=ts;if(dt>100)dt=16;var df=dt/16,t=ts*.001;ctx.clearRect(0,0,W,H);for(var i=0;i<stars.length;i++){var s=stars[i];s.y+=s.speed*df;if(s.y>H+2){s.y=-2;s.x=Math.random()*W;}var tw=s.bright?(0.4+0.6*Math.sin(t*0.9+s.phase)):1;ctx.globalAlpha=Math.max(.05,s.baseOp*tw);ctx.fillStyle=s.bright?'rgba(255,215,150,1)':'rgba(190,210,255,1)';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,6.2832);ctx.fill();}ctx.globalAlpha=1}resize();new ResizeObserver(function(){ctx.setTransform(1,0,0,1,0,0);resize()}).observe(canvas.parentElement);requestAnimationFrame(draw);})();
 </script>
 </body>
 </html>
